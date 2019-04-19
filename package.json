@@ -1,21 +1,48 @@
 {
   "name": "canva-share",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Gal Ofir",
+  "license": "ISC",
+  "description": "An app that enables multiple users to share a canvas online, with realtime updates! Made with nodejs express as the backend framework and React as the javascript frontend library",
+  "main": "server.js",
   "dependencies": {
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "app-root-path": "^2.2.1",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "create-react-app": "^2.1.8",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "konva": "^3.2.5",
+    "mocha": "^6.1.4",
+    "node-gyp": "^3.8.0",
+    "nodemon": "^1.18.11",
+    "pg": "^7.10.0",
+    "pg-hstore": "^2.3.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "2.1.8"
+    "react-konva": "^16.8.6",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "2.1.8",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "sequelize": "^5.7.0",
+    "socket.io": "^2.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "start": "nodemon server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://localhost:8080",
   "browserslist": [
     ">0.2%",
     "not dead",
