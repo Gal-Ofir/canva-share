@@ -16,13 +16,29 @@ shapes.init({
         type: Sequelize.STRING,
         allowNull: false
     },
-    type: {
+    shape: {
         type: Sequelize.STRING,
         allowNull: false
     },
     board_id: {
         type: Sequelize.STRING,
         allowNull: false
+    },
+    text: {
+        type: Sequelize.STRING,
+        allowNull: true
+    },
+    radius: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+    },
+    height: {
+        type: Sequelize.INTEGER,
+        allowNull: true
+    },
+    width: {
+        type: Sequelize.INTEGER,
+        allowNull: true
     }
 }, {sequelize});
 

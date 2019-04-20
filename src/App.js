@@ -1,40 +1,29 @@
-import React, { Component } from "react";
-import Konva from "konva";
-import { Stage, Layer, Rect, Text } from "react-konva";
+import React from "react";
+import Canvas from "./Components/Canvas/Canvas";
+import {createUser} from "./utils/http";
+import Welcome from "./Welcome";
 
-class ColoredRect extends React.Component {
-    state = {
-        color: "green"
-    };
-    handleClick = () => {
-        this.setState({
-            color: Konva.Util.getRandomColor()
-        });
-    };
-    render() {
-        return (
-            <Rect
-                x={20}
-                y={20}
-                width={50}
-                height={50}
-                fill={this.state.color}
-                shadowBlur={5}
-                onClick={this.handleClick}
-            />
-        );
+class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.path = document.location.pathname;
+        this.state = {
+            title: this.path === "/" ? 'Canva-Share' : 'Canva-Share - ' + this.path.replace('/', '')
+        };
+        document.getElementsByTagName('title')[0].textContent = this.state.title;
+        createUser();
     }
-}
 
-class App extends Component {
     render() {
         return (
-            <Stage width={window.innerWidth} height={window.innerHeight}>
-                <Layer>
-                    <Text text="Try click on rect" />
-                    <ColoredRect />
-                </Layer>
-            </Stage>
+            <div>
+                {this.path !== '/' ?
+                    <Canvas
+                        canvasRoom={this.state.title}/> :
+                    <Welcome/>
+                }
+            </div>
         );
     }
 }

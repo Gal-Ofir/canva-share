@@ -5,15 +5,18 @@ const TEST_SHAPE = {
     x: 100,
     y: 50,
     color: '#fff',
-    type: 'RECT',
-    board_id: 'board1'
+    shape: 'RECT',
+    board_id: 'board1',
+    height: 50,
+    width: 20
 };
 const TEST_SHAPE_2 = {
     x: 200,
     y: 100,
     color: '#000',
-    type: 'TRIANGLE',
-    board_id: 'board1'
+    shape: 'TRIANGLE',
+    board_id: 'board1',
+    radius: 30
 };
 
 describe("shapes service test", function () {
@@ -32,7 +35,7 @@ describe("shapes service test", function () {
                 assert.strictEqual(shapeFromDb.x, TEST_SHAPE.x);
                 assert.strictEqual(shapeFromDb.y, TEST_SHAPE.y);
                 assert.strictEqual(shapeFromDb.color, TEST_SHAPE.color);
-                assert.strictEqual(shapeFromDb.type, TEST_SHAPE.type);
+                assert.strictEqual(shapeFromDb.shape, TEST_SHAPE.shape);
                 done()
             })
             .catch(err => {

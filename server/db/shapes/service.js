@@ -1,7 +1,7 @@
 const model = require('./shapes');
 
-const insertShape = (user) => {
-    return model.create(user);
+const insertShape = (shape) => {
+    return model.create(shape);
 };
 
 const getShapesByBoardId = (boardId) => {

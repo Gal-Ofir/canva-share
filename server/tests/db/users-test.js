@@ -44,6 +44,20 @@ describe("users service test", function () {
                 done(new Error(err))
             });
     });
+    it('Attempt to get all boards', function (done) {
+        userService.getAllBoards()
+            .then((boards) => {
+                assert.ok(boards.includes('board2'));
+                done();
+            })
+            .catch(err => {
+                done(new Error(err))
+            });
+    });
+    it('Verify user is owner', async function () {
+        const isUserOwner = await userService.isUserOwnerByIp(TEST_USER.ip, 'board2');
+        assert.strictEqual(isUserOwner, true);
+    });
     it('Attempt to increment shapes created', function (done) {
         userService.incrementShapesCreatedByIp(TEST_USER.ip)
             .then(([rowsAffected, numOfShapesFromDb]) => {

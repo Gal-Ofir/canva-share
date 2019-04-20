@@ -1,5 +1,6 @@
 const model = require('./users');
 const sequelize = require('sequelize');
+const Op = require('sequelize').Op;
 
 const insertUser = (user) => {
     return model.create(user);
@@ -40,14 +41,12 @@ const incrementShapesCreatedByIp = (ip) => {
 
 const resetShapesCreatedForAllUsers = () => {
     return model.sequelize.getQueryInterface().bulkUpdate('users', {shapes_created: 0}, {});
-    // return model.sequelize.getQueryInterface().bulkUpdate({
-    //     shapes_created: 0
-    // });
 };
 
-const isIpOwner = (ip, boardId) => {
-  getUserByIp(ip).then(user => {
-
+const isUserOwnerByIp = (ip, boardId) => {
+  return getUserByIp(ip).then(user => {
+      const {boards_owned} = user;
+      return boards_owned.boards.includes(boardId);
   });
 };
 
@@ -60,15 +59,36 @@ const deleteUserByIp = (ip) => {
 
 };
 
+const getAllBoards = () => {
+    return new Promise((resolve, reject) => {
+        return model.findAll({
+            where: {
+                shapes_created: {
+                    [Op.gte]: 0
+                }
+            }
+        })
+            .then(response => {
+                let boards = [];
+                response.forEach(response => {
+                    boards = boards.concat(response.get('boards_owned').boards);
+                });
+                 resolve(boards);
+            })
+            .catch(err => reject(err));
+    });
+};
+
 
 const service = {
     insertUser,
-    deleteUserByIp,
+    isUserOwnerByIp,
     getUserByIp,
     deleteUserByIp,
     updateBoardByIp,
     incrementShapesCreatedByIp,
-    resetShapesCreatedForAllUsers
+    resetShapesCreatedForAllUsers,
+    getAllBoards
 };
 
 module.exports = service;
