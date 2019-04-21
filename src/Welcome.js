@@ -36,7 +36,6 @@ class Welcome extends React.Component {
     };
 
     render() {
-        console.log(this.state.boards);
         return <div className={'welcome-container'} style={{height: this.state.height, width: this.state.width}}>
                 <div className={'welcome-message'}>
                     Welcome to Canva-Share!

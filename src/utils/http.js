@@ -24,15 +24,24 @@ export const getUserInfo = () => {
 };
 
 export const createUser = () => {
-    getUserInfo()
-        .then(response => {
-            if (response.data === null) {
-                axios({
-                    method: 'POST',
-                    url: '/user'
-                });
-            }
-        });
+    return new Promise((resolve, reject) => {
+        getUserInfo()
+            .then(response => {
+                if (response.data === null) {
+                    return axios({
+                        method: 'POST',
+                        url: '/user'
+                    });
+                }
+                else {
+                    return response;
+                }
+            })
+            .then(response => {
+                resolve(response);
+            })
+            .catch(err => reject(err));
+    });
 };
 
 export const getAllBoards = () => {

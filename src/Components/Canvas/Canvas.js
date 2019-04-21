@@ -84,6 +84,10 @@ class Canvas extends React.Component {
         this.setState({refreshCanvas: false});
     };
 
+    refreshManager = () => {
+        this.setState({isManager: true});
+    };
+
     render() {
         return (
             <div id="outer-container">
@@ -113,8 +117,11 @@ class Canvas extends React.Component {
                 />
                 <div id="page-wrap">
                     <CanvasContainer
+                        identifier={this.props.identifier}
+                        canvasRoom={this.props.canvasRoom}
                         refreshCanvas={this.state.refreshCanvas}
                         afterRefreshCanvas={this.afterRefreshCanvas}
+                        onAddShape={this.refreshManager}
                         color={this.state.color}
                         shape={this.state.selectedShape}
                         cursor={this.state.cursor}

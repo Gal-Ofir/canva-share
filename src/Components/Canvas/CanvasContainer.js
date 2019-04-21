@@ -2,6 +2,7 @@ import React from "react";
 import {Stage, Layer} from "react-konva";
 import Shape from "../Shapes/Shape"
 import * as httpUtils from "../../utils/http";
+import {socket} from "../../App";
 
 class CanvasContainer extends React.Component {
 
@@ -15,7 +16,23 @@ class CanvasContainer extends React.Component {
             existingShapes: [],
             shouldAddBoard: false
         };
+        if (props.canvasRoom) {
+            socket.on(props.canvasRoom, (data) => {
+                this.handleSocketData(data);
+            })
+        }
     }
+
+    handleSocketData = (data) => {
+        if (data.identifier !== this.props.identifier) {
+            console.log(data.identifier, this.props.identifier);
+            const existingShapes = this.state.existingShapes;
+            existingShapes.push(data);
+            this.setState({
+                existingShapes
+            });
+        }
+    };
 
     getWidth = () => {
         return Math.floor(window.innerWidth * 0.79);
@@ -74,6 +91,7 @@ class CanvasContainer extends React.Component {
         const y = event.evt.layerY;
         const color = this.props.color;
         const data = {
+            identifier: this.props.identifier,
             x,
             y,
             color,
@@ -85,21 +103,25 @@ class CanvasContainer extends React.Component {
             board_id: this.getBoardId(),
             shouldAddBoard: this.state.shouldAddBoard
         };
-        const existingShapes = this.state.existingShapes;
-        existingShapes.push(data);
+        if (this.props.onAddShape && this.state.shouldAddBoard) {
+            this.props.onAddShape();
+        }
+       const existingShapes = this.state.existingShapes;
+       existingShapes.push(data);
         this.setState({
-                existingShapes,
+//                existingShapes,
                 shouldAddBoard: false
             },
             () => {
                 httpUtils.addShape(data)
                     .then(response => {
-                        if (!response.error) {
-                        }
-                        else {
+                        if (response.error) {
                             alert(`Failed to insert shape! ${response.error}`);
                         }
-                    })
+                        else {
+                            socket.emit('update_board', {board: this.props.canvasRoom, data});
+                        }
+                    });
             });
 
     };

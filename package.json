@@ -30,7 +30,8 @@
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
     "sequelize": "^5.7.0",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
   },
   "scripts": {
     "react-start": "react-scripts start",

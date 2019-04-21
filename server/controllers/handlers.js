@@ -1,10 +1,13 @@
 const shapeService = require('../db/shapes');
 const userService = require('../db/users');
+const hash = require('../utils/hash');
 
 const addShape = (req, res) => {
 
     shapeService.insertShape(req.body)
-        .then(() => res.json({status: 200, message: "success"}))
+        .then(() => {
+            res.json({status: 200, message: "success"})
+        })
         .catch(err => res.json({status: 200, error: err.message}));
     userService.incrementShapesCreatedByIp(req.ip);
     if (req.body.shouldAddBoard) {
@@ -39,7 +42,8 @@ const createUser = (req, res) => {
     };
     userService.insertUser(user)
         .then(() => {
-            res.json(user);
+            let response = {...user.dataValues, identifier: hash(req.ip)};
+            res.json(response);
         })
         .catch(err => res.json({status: 200, error: err.message}));
 };
@@ -47,7 +51,13 @@ const createUser = (req, res) => {
 const getUserByIp = (req, res) => {
     userService.getUserByIp(req.ip)
         .then(response => {
-            res.json(response);
+            if (!response) {
+                res.json(null);
+            }
+            else {
+                response = {...response.dataValues, identifier: hash(req.ip)};
+                res.json(response);
+            }
         })
         .catch(err => res.json({status: 200, error: err.message}));
 };

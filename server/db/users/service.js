@@ -32,7 +32,7 @@ const updateBoardByIp = (ip, boardId) => {
                     boards_owned.boards.push(boardId);
                     model.update({
                         boards_owned
-                    })
+                    }, { where : {ip: ip}})
                         .then(() => resolve())
                         .catch(err => reject(err));
                 }
