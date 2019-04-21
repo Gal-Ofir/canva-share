@@ -15,18 +15,29 @@ const getUserByIp = (ip) => {
 };
 
 const updateBoardByIp = (ip, boardId) => {
-    return getUserByIp(ip)
-        .then(user => {
-            const {boards_owned} = user;
-            boards_owned.boards.push(boardId);
-            return model.update({
-                    boards_owned
-                },
-                {
-                    where: {ip: ip},
-                    returning: true
-                });
-        });
+    return new Promise((resolve, reject) => {
+        return getAllBoards()
+            .then((boards) => {
+                return !boards.includes(boardId);
+            })
+            .then(cont => {
+                if (cont) {
+                    return getUserByIp(ip);
+                }
+                return false;
+            })
+            .then(user => {
+                if (user) {
+                    const {boards_owned} = user;
+                    boards_owned.boards.push(boardId);
+                    model.update({
+                        boards_owned
+                    })
+                        .then(() => resolve())
+                        .catch(err => reject(err));
+                }
+            }).catch(err => reject(err));
+    });
 };
 
 const incrementShapesCreatedByIp = (ip) => {
@@ -44,10 +55,10 @@ const resetShapesCreatedForAllUsers = () => {
 };
 
 const isUserOwnerByIp = (ip, boardId) => {
-  return getUserByIp(ip).then(user => {
-      const {boards_owned} = user;
-      return boards_owned.boards.includes(boardId);
-  });
+    return getUserByIp(ip).then(user => {
+        const {boards_owned} = user;
+        return boards_owned.boards.includes(boardId);
+    });
 };
 
 const deleteUserByIp = (ip) => {
@@ -73,7 +84,7 @@ const getAllBoards = () => {
                 response.forEach(response => {
                     boards = boards.concat(response.get('boards_owned').boards);
                 });
-                 resolve(boards);
+                resolve(boards);
             })
             .catch(err => reject(err));
     });

@@ -1,9 +1,9 @@
-import React, {Component} from "react";
+import React from "react";
 import {Stage, Layer} from "react-konva";
 import Shape from "../Shapes/Shape"
 import * as httpUtils from "../../utils/http";
 
-class CanvasContainer extends Component {
+class CanvasContainer extends React.Component {
 
     constructor(props) {
         super(props);
@@ -26,6 +26,12 @@ class CanvasContainer extends Component {
             height: window.innerHeight,
             width: this.getWidth()
         });
+    };
+
+    componentWillReceiveProps = (nextProps) => {
+        if (nextProps.refreshCanvas) {
+            this.setState({existingShapes: []}, this.props.afterRefreshCanvas);
+        }
     };
 
     getBoardId = () => {

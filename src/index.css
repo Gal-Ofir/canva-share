@@ -17,12 +17,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+    text-decoration: none;
+}
+
 header {
+    font-family: 'Gloria Hallelujah', cursive;
     width: 100%;
     float: right;
-    font-family: fantasy;
     margin-top: 10px;
     text-align: center;
     font-size: 30px;
 }
 
+.konvajs-content {
+    border: 1px solid #a0a0a0;
+}
+
+.konvajs-content:hover {
+    cursor: pointer;
+}
+
+.button-wrap {
+    width: 150px;
+    position: absolute;
+    left: 23%;
+    top: 1%;
+}
+
+.modal-footer {
+    justify-content: left;
+}

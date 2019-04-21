@@ -1,7 +1,9 @@
 import React from "react";
 import CanvasContainer from "./CanvasContainer";
 import Sidebar from '../Sidebar/Sidebar';
-
+import {getUserInfo, deleteAllShapesByBoardId} from "../../utils/http";
+import {Button} from "react-bootstrap";
+import DeleteModal from "./DeleteModal";
 
 class Canvas extends React.Component {
 
@@ -14,9 +16,23 @@ class Canvas extends React.Component {
             height: 50,
             width: 50,
             radius: 30,
-            text: 'Text'
+            text: 'Text',
+            isManager: false,
+            deleteModalVisible: false,
+            refreshCanvas: false
         }
     }
+
+    componentDidMount = () => {
+        getUserInfo()
+            .then(user => {
+                if (user.data.boards_owned.boards.includes(this.props.canvasRoom)) {
+                    this.setState({
+                        isManager: true
+                    });
+                }
+            });
+    };
 
     setShapeAndCursor = (selectedShape, cursor) => {
         this.setState({
@@ -45,10 +61,42 @@ class Canvas extends React.Component {
         this.setState({text});
     };
 
+    onClickDelete = () => {
+        this.setState({deleteModalVisible: true});
+    };
+
+    onDeleteModalClose = () => {
+        this.setState({deleteModalVisible: false});
+    };
+
+    handleDelete = (callback) => {
+        deleteAllShapesByBoardId(this.props.canvasRoom)
+            .then(() => {
+                if (callback) {
+                    callback();
+                }
+                this.setState({deleteModalVisible: false, refreshCanvas: true});
+
+            });
+    };
+
+    afterRefreshCanvas = () => {
+        this.setState({refreshCanvas: false});
+    };
+
     render() {
         return (
             <div id="outer-container">
-                <header>Welcome to {this.props.canvasRoom}</header>
+                {this.state.deleteModalVisible && <DeleteModal
+                    onDeleteModalClose={this.onDeleteModalClose}
+                    handleDelete={this.handleDelete}/>
+                }
+                <header>
+                    {this.state.isManager &&
+                    <div className={'button-wrap'}><Button onClick={this.onClickDelete} size={"sm"} variant={"danger"}>Delete all shapes :(</Button>
+                    </div>}
+                    <span>Board {this.props.canvasRoom} {this.state.isManager && '(manager)'} </span>
+                </header>
                 <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"}
                          color={this.state.color}
                          height={this.state.height}
@@ -65,13 +113,15 @@ class Canvas extends React.Component {
                 />
                 <div id="page-wrap">
                     <CanvasContainer
-                    color={this.state.color}
-                    shape={this.state.selectedShape}
-                    cursor={this.state.cursor}
-                    width={this.state.width}
-                    height={this.state.height}
-                    radius={this.state.radius}
-                    text={this.state.text}/>
+                        refreshCanvas={this.state.refreshCanvas}
+                        afterRefreshCanvas={this.afterRefreshCanvas}
+                        color={this.state.color}
+                        shape={this.state.selectedShape}
+                        cursor={this.state.cursor}
+                        width={this.state.width}
+                        height={this.state.height}
+                        radius={this.state.radius}
+                        text={this.state.text}/>
                 </div>
             </div>
         );

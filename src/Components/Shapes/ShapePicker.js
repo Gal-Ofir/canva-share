@@ -56,7 +56,7 @@ class ShapePicker extends React.Component {
                     onChangeComplete={this.props.onChangeComplete}
                     onChange={this.props.onChange}
                 />
-                <div style={{color: "#000", marginTop: '8px'}}>
+                <div style={{color: "#ffffff", marginTop: '8px'}}>
                     Current shape: {shapeTypes[this.props.shape]}
                     {shapeModifier}
                     </div>

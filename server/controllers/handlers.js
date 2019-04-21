@@ -52,4 +52,17 @@ const getUserByIp = (req, res) => {
         .catch(err => res.json({status: 200, error: err.message}));
 };
 
-module.exports = {addShape, getShapesByBoardId, createUser, getUserByIp};
+const getAllBoards = (req, res) => {
+    userService.getAllBoards()
+        .then(boards => res.json(boards))
+        .catch(err => res.json({status: 200, error: err.message}));
+
+};
+
+const deleteBoardByBoardId = (req, res) => {
+    shapeService.deleteShapesByBoardId(req.params.boardId)
+        .then(() => res.json({status: 200, message: "success"}))
+        .catch(err => res.json({status: 200, error: err.message}));
+};
+
+module.exports = {deleteBoardByBoardId, addShape, getShapesByBoardId, createUser, getUserByIp, getAllBoards};

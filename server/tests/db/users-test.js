@@ -37,7 +37,7 @@ describe("users service test", function () {
     it('Attempt to update user boards', function (done) {
         userService.updateBoardByIp(TEST_USER.ip, 'board2')
             .then(([rowsAffected, boardsOwnedFromDb]) => {
-                assert.strictEqual(boardsOwnedFromDb[0].dataValues.boards_owned.boards.length, 2);
+                assert.strictEqual(boardsOwnedFromDb[0].get('boards_owned').boards.length, 2);
                 done();
             })
             .catch(err => {
@@ -61,7 +61,7 @@ describe("users service test", function () {
     it('Attempt to increment shapes created', function (done) {
         userService.incrementShapesCreatedByIp(TEST_USER.ip)
             .then(([rowsAffected, numOfShapesFromDb]) => {
-                assert.strictEqual(numOfShapesFromDb[0].dataValues.shapes_created, 1);
+                assert.strictEqual(numOfShapesFromDb[0].get('shapes_created'), 1);
                 done();
             })
             .catch(err => {

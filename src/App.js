@@ -9,7 +9,7 @@ class App extends React.Component {
         super(props);
         this.path = document.location.pathname;
         this.state = {
-            title: this.path === "/" ? 'Canva-Share' : 'Canva-Share - ' + this.path.replace('/', '')
+            title: this.path === "/" ? 'Canva-Share' : this.path.replace('/', '')
         };
         document.getElementsByTagName('title')[0].textContent = this.state.title;
         createUser();

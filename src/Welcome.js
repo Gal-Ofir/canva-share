@@ -1,11 +1,14 @@
 import React from "react";
 import "./Welcome.css";
+import {getAllBoards} from "./utils/http";
+
 class Welcome extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             height: 0,
-            width: 0
+            width: 0,
+            boards: []
         }
     }
 
@@ -26,9 +29,14 @@ class Welcome extends React.Component {
 
     componentDidMount = () => {
         window.addEventListener("resize", this.updateDimensions);
+        getAllBoards()
+            .then(boards => {
+                this.setState({boards: boards.data})
+            });
     };
 
     render() {
+        console.log(this.state.boards);
         return <div className={'welcome-container'} style={{height: this.state.height, width: this.state.width}}>
                 <div className={'welcome-message'}>
                     Welcome to Canva-Share!
@@ -36,18 +44,13 @@ class Welcome extends React.Component {
                         Pick an existing board or create a new one and get started with your friends
                     </div>
                 </div>
-            <div className={"canvas"}>
-                Hi
-            </div>
-            <div className={"canvas"}>
-                Hello
-            </div>
-            <div className={"canvas"}>
-                Hi
-            </div>
-            <div className={"canvas"}>
-                Hi
-            </div>
+            {this.state.boards.length && this.state.boards.map((board, i) => {
+                return (<a key={i} href={`/${board}`}>
+                        <div className={'canvas'}>
+                            {board}
+                        </div>
+                </a>);
+            })}
         </div>;
     }
 }

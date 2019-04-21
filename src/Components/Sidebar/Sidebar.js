@@ -3,62 +3,65 @@ import React from "react";
 import "./Sidebar.css";
 import ShapePicker from "../Shapes/ShapePicker"
 
-const styles = {
-    bmBurgerButton: {
-        position: 'fixed',
-        width: '36px',
-        height: '30px',
-        left: '36px',
-        top: '36px',
-    },
-    bmBurgerBars: {
-        background: 'rgb(148, 168, 255)'
-    },
-    bmBurgerBarsHover: {
-        background: '#a90000'
-    },
-    bmCrossButton: {
-        height: '24px',
-        width: '24px',
-        marginLeft: '80%'
-    },
-    bmCross: {
-        background: '#bdc3c7'
-    },
-    bmMenuWrap: {
-        position: 'fixed',
-        height: '100%',
-        width: '20%'
-    },
-    bmMenu: {
-        background: 'rgb(148, 168, 255)',
-        padding: '2.5em 1.5em 0',
-        fontSize: '1.15em',
-        width: '100%',
-        overflow: 'hidden'
-    },
-    bmMorphShape: {
-        fill: '#373a47'
-    },
-    bmItemList: {
-        color: '#b8b7ad',
-        padding: '0.8em'
-    },
-    bmItem: {
-        cursor: 'pointer',
-        display: 'block',
-        padding: '5px',
-        marginLeft: '32%',
-        marginBottom: '20%'
-    },
-    bmOverlay: {
-        background: 'rgba(0, 0, 0, 0.3)'
-    }
-};
-
 
 class Sidebar extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            height: 0,
+            width: 0
+        };
+    }
+
+    getStyles = () => {
+        return {
+            bmBurgerButton: {
+                position: 'fixed',
+                width: '36px',
+                height: '30px',
+                left: '36px',
+                top: '36px',
+            },
+            bmBurgerBars: {
+                background: 'rgb(148, 168, 255)'
+            },
+            bmBurgerBarsHover: {
+                background: '#a90000'
+            },
+            bmCrossButton: {
+                display: 'none'
+            },
+            bmCross: {
+                background: '#bdc3c7'
+            },
+            bmMenuWrap: {
+                position: 'fixed',
+                height: this.state.height,
+                width: Math.floor(this.state.width * 0.2)
+            },
+            bmMenu: {
+                overflow: 'hidden'
+            },
+            bmMorphShape: {
+                fill: '#373a47'
+            },
+            bmItemList: {
+                color: '#b8b7ad',
+                padding: '0.8em'
+            },
+            bmItem: {
+                cursor: 'pointer',
+                display: 'block',
+                padding: '5px',
+                marginLeft: '32%',
+                marginBottom: '20%'
+            },
+            bmOverlay: {
+                background: 'rgba(0, 0, 0, 0.3)'
+            }
+        };
+    };
 
     handleShapeClick = (event) => {
         const cursor = event.target.id === "text" ? "default" : event.target.id;
@@ -89,11 +92,25 @@ class Sidebar extends React.Component {
         this.props.onHeightChange(event.target.value);
     };
 
+    componentWillMount = () => {
+        this.updateDimensions();
+    };
+
+    componentDidMount = () => {
+        window.addEventListener("resize", this.updateDimensions);
+    };
+
+    updateDimensions = () => {
+        this.setState({
+            height: window.innerHeight,
+            width: window.innerWidth
+        });
+    };
+
 
     render() {
         return (
-            <Menu styles={styles} noOverlay>
-
+            <Menu styles={this.getStyles()} noOverlay isOpen={true} disableCloseOnEsc >
                 <div id={"rect"} className={"rect"} style={{backgroundColor: this.props.color}}
                      onClick={this.handleShapeClick}>{""}</div>
 

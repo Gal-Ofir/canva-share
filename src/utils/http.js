@@ -33,5 +33,18 @@ export const createUser = () => {
                 });
             }
         });
+};
 
+export const getAllBoards = () => {
+    return axios({
+        method: 'GET',
+        url: '/boards',
+    });
+};
+
+export const deleteAllShapesByBoardId = (boardId) => {
+    return axios({
+        method: 'DELETE',
+        url: `/${boardId}`
+    })
 };

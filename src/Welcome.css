@@ -6,14 +6,14 @@
 
 .canvas {
     background: url("images/canvas.jpg");
-    width: 18%;
-    height: 18%;
+    width: 10%;
+    height: 10%;
     font-family: 'Gloria Hallelujah', cursive;
-    font-size: 42px;
-    margin:3%;
+    font-size: 30px;
+    margin:1%;
     border-radius: 20px;
     display: inline-grid;
-    color: #192ef9;
+    color: #b819f9;
 }
 
 .welcome-message {
