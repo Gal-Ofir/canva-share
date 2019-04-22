@@ -6,7 +6,6 @@ const app = express();
 const controllers = require('./server/controllers');
 const port = process.env.PORT || 8080;
 
-// WARNING: app.listen(80) will NOT work here!
 
 app.use(express.static(path.join(__dirname, 'build')));
 
@@ -29,6 +28,7 @@ const io = require('socket.io')(server);
 
 io.on("connection", socket => {
     socket.on('update_board', (data) => {
+        console.log('update board', data);
         const {board} = data;
         const newShape = data.data;
         socket.emit(board, newShape);

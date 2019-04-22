@@ -1,11 +1,25 @@
 import axios from "axios";
+import socketIOClient from "socket.io-client";
+
+const ID_KEY = `_id:${window.location.host}`;
+export let socket;
+
+export const initSocket = () => {
+    socket = socketIOClient(document.location.origin);
+};
 
 export const addShape = (data) => {
+    data = {...data, ip: window.localStorage.getItem(ID_KEY)};
+    socket.emit('update_board', {board: data.board_id, data});
     return axios({
         method: 'POST',
         url: '/shape',
         data: data
     });
+};
+
+export const messageFromMe = (ipToCheck) => {
+    return window.localStorage.getItem(ID_KEY) === ipToCheck;
 };
 
 export const getShapesByBoardId = (boardId) => {
@@ -15,33 +29,46 @@ export const getShapesByBoardId = (boardId) => {
     });
 };
 
-export const getUserInfo = () => {
+export const getIsManagerForBoard = (boardId) => {
     return axios({
         method: 'GET',
-        url: '/user',
-        maxRedirects: 100
+        url: `/manager?ip=${window.localStorage.getItem(ID_KEY)}&boardId=${boardId}`
+    });
+};
+
+export const getUser = () => {
+    return new Promise((resolve, reject) => {
+        const idFromLocalStorage = window.localStorage.getItem(ID_KEY);
+        if (idFromLocalStorage && idFromLocalStorage !== 'undefined') {
+            axios({
+                method: 'GET',
+                url: `/user/${idFromLocalStorage}`
+            })
+                .then(response => {
+                    if (response.data) {
+                        resolve(response);
+                    }
+                    else {
+                        resolve(createUser());
+                    }
+                })
+                .catch(err => reject(err));
+        }
+        else {
+            resolve(createUser());
+        }
     });
 };
 
 export const createUser = () => {
-    return new Promise((resolve, reject) => {
-        getUserInfo()
-            .then(response => {
-                if (response.data === null) {
-                    return axios({
-                        method: 'POST',
-                        url: '/user'
-                    });
-                }
-                else {
-                    return response;
-                }
-            })
-            .then(response => {
-                resolve(response);
-            })
-            .catch(err => reject(err));
-    });
+    return axios({
+        method: 'POST',
+        url: '/user',
+    }).then(response => {
+        const {ip} = response.data;
+        window.localStorage.setItem(ID_KEY, ip);
+        return (response);
+    })
 };
 
 export const getAllBoards = () => {
@@ -52,6 +79,7 @@ export const getAllBoards = () => {
 };
 
 export const deleteAllShapesByBoardId = (boardId) => {
+    socket.emit('delete_shapes', {board: boardId});
     return axios({
         method: 'DELETE',
         url: `/${boardId}`

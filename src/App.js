@@ -1,10 +1,7 @@
 import React from "react";
 import Canvas from "./Components/Canvas/Canvas";
-import {createUser} from "./utils/http";
+import {getUser, initSocket} from "./utils/http";
 import Welcome from "./Welcome";
-import socketIOClient from "socket.io-client";
-
-let socket;
 
 class App extends React.Component {
 
@@ -16,28 +13,25 @@ class App extends React.Component {
             identifier: ''
         };
         document.getElementsByTagName('title')[0].textContent = this.state.title;
-        socket = socketIOClient(document.location.origin);
+        initSocket();
     }
 
     componentDidMount = () => {
-        createUser()
-            .then(response => {
-                this.setState({identifier: response.data.identifier});
-            })
+        getUser();
     };
 
     render() {
         return (
             <div>
-                {this.path !== '/' ?
+                {this.path === '/' ?
+                    <Welcome/> :
                     <Canvas
-                        identifier={this.state.identifier}
-                        canvasRoom={this.state.title}/> :
-                    <Welcome/>
+                        boardId={this.state.title}
+                    />
                 }
             </div>
         );
     }
 }
 
-export {socket,  App};
+export default App;

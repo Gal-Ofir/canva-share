@@ -38,7 +38,7 @@
     "react-build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "heroku-postbuild": "react-scripts build"
   },
   "eslintConfig": {

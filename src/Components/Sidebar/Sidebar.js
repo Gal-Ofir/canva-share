@@ -64,17 +64,15 @@ class Sidebar extends React.Component {
     };
 
     handleShapeClick = (event) => {
-        const cursor = event.target.id === "text" ? "default" : event.target.id;
-        const selectedShape = event.target.id.toUpperCase();
-        this.props.setShapeAndCursor(selectedShape, cursor);
+        this.props.setShape(event.target.id.toUpperCase());
     };
 
     onChangeComplete = (color) => {
-        this.props.setColor(color.hex)
+        this.props.setColor(color.hex);
     };
 
     onChange = (color) => {
-        this.props.setColor(color.hex)
+        this.props.setColor(color.hex);
     };
 
     onTextChange = (event) => {

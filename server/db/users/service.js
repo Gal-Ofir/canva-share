@@ -3,7 +3,7 @@ const sequelize = require('sequelize');
 const Op = require('sequelize').Op;
 
 const insertUser = (user) => {
-    return model.create(user);
+    return model.create(user, {returning: true});
 };
 
 const getUserByIp = (ip) => {

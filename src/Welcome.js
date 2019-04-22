@@ -35,6 +35,11 @@ class Welcome extends React.Component {
             });
     };
 
+    handleCreateNewClick = (event) => {
+        event.preventDefault();
+        alert('jk');
+    };
+
     render() {
         return <div className={'welcome-container'} style={{height: this.state.height, width: this.state.width}}>
                 <div className={'welcome-message'}>
@@ -43,7 +48,8 @@ class Welcome extends React.Component {
                         Pick an existing board or create a new one and get started with your friends
                     </div>
                 </div>
-            {this.state.boards.length && this.state.boards.map((board, i) => {
+            <div className={"canvas"} onClick={this.handleCreateNewClick}>Create new...</div>
+            {this.state.boards.length > 0 && this.state.boards.map((board, i) => {
                 return (<a key={i} href={`/${board}`}>
                         <div className={'canvas'}>
                             {board}

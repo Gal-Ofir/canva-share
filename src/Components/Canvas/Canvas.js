@@ -1,7 +1,7 @@
 import React from "react";
 import CanvasContainer from "./CanvasContainer";
 import Sidebar from '../Sidebar/Sidebar';
-import {getUserInfo, deleteAllShapesByBoardId} from "../../utils/http";
+import {socket, messageFromMe, getIsManagerForBoard, deleteAllShapesByBoardId, addShape, getShapesByBoardId} from "../../utils/http";
 import {Button} from "react-bootstrap";
 import DeleteModal from "./DeleteModal";
 
@@ -11,34 +11,71 @@ class Canvas extends React.Component {
         super(props);
         this.state = {
             color: '#fff',
-            cursor: '',
             selectedShape: 'RECT',
             height: 50,
             width: 50,
             radius: 30,
             text: 'Text',
+            existingShapes: [],
             isManager: false,
             deleteModalVisible: false,
-            refreshCanvas: false
+            shouldAddBoard: false
+        };
+        if (props.boardId) {
+            this.handleSocketData();
         }
     }
 
-    componentDidMount = () => {
-        getUserInfo()
-            .then(user => {
-                if (user.data.boards_owned.boards.includes(this.props.canvasRoom)) {
-                    this.setState({
-                        isManager: true
-                    });
-                }
-            });
+    handleSocketData = () => {
+        socket.on(this.props.boardId, (data) => {
+            console.log(data);
+            if (!messageFromMe(data.ip)) {
+                const existingShapes = this.state.existingShapes;
+                existingShapes.push(data);
+                this.setState({
+                    existingShapes
+                });
+            }
+        })
     };
 
-    setShapeAndCursor = (selectedShape, cursor) => {
-        this.setState({
-            cursor,
-            selectedShape
-        });
+    componentDidMount = () => {
+        this.loadShapesFromDb();
+        this.checkIfManager();
+    };
+
+    checkIfManager = () => {
+        if (this.props.boardId) {
+            getIsManagerForBoard(this.props.boardId)
+                .then(response => {
+                    this.setState({isManager: response.data});
+                })
+                .catch(() => {
+                    this.setState({isManager: false})
+                });
+        }
+    };
+
+    loadShapesFromDb = () => {
+        // todo preloader while loading
+        const boardId = this.props.boardId;
+        if (boardId) {
+            getShapesByBoardId(boardId)
+                .then(shapesFromDb => {
+                    if (shapesFromDb.data.length) {
+                        this.setState({
+                            existingShapes: this.state.existingShapes.concat(shapesFromDb.data)
+                        });
+                    }
+                    else {
+                        this.setState({shouldAddBoard: true});
+                    }
+                });
+        }
+    };
+
+    setShape = (selectedShape) => {
+        this.setState({selectedShape});
     };
 
     setColor = (color) => {
@@ -70,36 +107,99 @@ class Canvas extends React.Component {
     };
 
     handleDelete = (callback) => {
-        deleteAllShapesByBoardId(this.props.canvasRoom)
+        deleteAllShapesByBoardId(this.props.boardId)
             .then(() => {
                 if (callback) {
                     callback();
                 }
-                this.setState({deleteModalVisible: false, refreshCanvas: true});
-
+                this.setState({deleteModalVisible: false, existingShapes: []});
             });
     };
 
-    afterRefreshCanvas = () => {
-        this.setState({refreshCanvas: false});
+    /**
+     * Returns relevant data to save in db,
+     * In order to reduce overhead of saving irrelevant data for different shapes
+     * @param {object} data
+     * @returns {object} result
+     */
+    getShapeData = data => {
+        const result = {
+            shape: data.shape,
+            x: data.x,
+            y: data.y,
+            color: data.color,
+            board_id: data.board_id,
+            shouldAddBoard: data.shouldAddBoard
+        };
+        switch (data.shape) {
+            case "TRIANGLE":
+            case "CIRCLE":
+                result.radius = data.radius;
+                break;
+            case "RECT":
+                result.width = data.width;
+                result.height = data.height;
+                break;
+            case "TEXT":
+                result.text = data.text;
+                break;
+            default:
+        }
+        return result;
     };
 
-    refreshManager = () => {
-        this.setState({isManager: true});
+    onCanvasClick = (event) => {
+        const data = this.getShapeData({
+            x: event.evt.layerX,
+            y: event.evt.layerY,
+            color: this.state.color,
+            shape: this.state.selectedShape,
+            width: this.state.width,
+            height: this.state.height,
+            text: this.state.text,
+            radius: this.state.radius,
+            board_id: this.props.boardId,
+            shouldAddBoard: this.state.shouldAddBoard
+        });
+        const existingShapes = this.state.existingShapes;
+        existingShapes.push(data);
+        this.setState({
+                existingShapes,
+                shouldAddBoard: false
+            },
+            () => {
+                addShape(data)
+                    .then(response => {
+                        if (response.error) {
+                            alert(`Failed to insert shape! ${response.error}`);
+                        }
+                        else {
+                        }
+                    })
+                    .then(() => {
+                        if (!this.state.isManager) {
+                            this.checkIfManager();
+                        }
+                    });
+            });
     };
 
     render() {
         return (
             <div id="outer-container">
-                {this.state.deleteModalVisible && <DeleteModal
+                {this.state.deleteModalVisible &&
+                <DeleteModal
                     onDeleteModalClose={this.onDeleteModalClose}
                     handleDelete={this.handleDelete}/>
                 }
                 <header>
                     {this.state.isManager &&
-                    <div className={'button-wrap'}><Button onClick={this.onClickDelete} size={"sm"} variant={"danger"}>Delete all shapes :(</Button>
+                    <div className={'button-wrap'}>
+                        <Button onClick={this.onClickDelete} size={"sm"} variant={"danger"}>
+                            Delete all shapes :(
+                        </Button>
                     </div>}
-                    <span>Board {this.props.canvasRoom} {this.state.isManager && '(manager)'} </span>
+                    <span>Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
                 </header>
                 <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"}
                          color={this.state.color}
@@ -108,7 +208,7 @@ class Canvas extends React.Component {
                          text={this.state.text}
                          radius={this.state.radius}
                          selectedShape={this.state.selectedShape}
-                         setShapeAndCursor={this.setShapeAndCursor}
+                         setShape={this.setShape}
                          setColor={this.setColor}
                          onWidthChange={this.onWidthChange}
                          onHeightChange={this.onHeightChange}
@@ -117,18 +217,9 @@ class Canvas extends React.Component {
                 />
                 <div id="page-wrap">
                     <CanvasContainer
-                        identifier={this.props.identifier}
-                        canvasRoom={this.props.canvasRoom}
-                        refreshCanvas={this.state.refreshCanvas}
-                        afterRefreshCanvas={this.afterRefreshCanvas}
-                        onAddShape={this.refreshManager}
-                        color={this.state.color}
-                        shape={this.state.selectedShape}
-                        cursor={this.state.cursor}
-                        width={this.state.width}
-                        height={this.state.height}
-                        radius={this.state.radius}
-                        text={this.state.text}/>
+                        onCanvasClick={this.onCanvasClick}
+                        existingShapes={this.state.existingShapes}
+                    />
                 </div>
             </div>
         );
