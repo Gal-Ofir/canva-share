@@ -1,9 +1,17 @@
 import React from "react";
 import CanvasContainer from "./CanvasContainer";
 import Sidebar from '../Sidebar/Sidebar';
-import {socket, messageFromMe, getIsManagerForBoard, deleteAllShapesByBoardId, addShape, getShapesByBoardId} from "../../utils/http";
+import {
+    socket,
+    messageFromMe,
+    getIsManagerForBoard,
+    deleteAllShapesByBoardId,
+    addShape,
+    getShapesByBoardId
+} from "../../utils/http";
 import {Button} from "react-bootstrap";
 import DeleteModal from "./DeleteModal";
+import Alerts from "../Alerts";
 
 class Canvas extends React.Component {
 
@@ -19,7 +27,9 @@ class Canvas extends React.Component {
             existingShapes: [],
             isManager: false,
             deleteModalVisible: false,
-            shouldAddBoard: false
+            shouldAddBoard: false,
+            deleteAlertVisible: false,
+            managerAlertVisible: false
         };
         if (props.boardId) {
             this.handleSocketData();
@@ -36,6 +46,18 @@ class Canvas extends React.Component {
                     existingShapes
                 });
             }
+        });
+        socket.on(`delete:${this.props.boardId}`, (ip) => {
+            if (!messageFromMe(ip)) {
+                this.managerDeletedShapes();
+            }
+        })
+    };
+
+    managerDeletedShapes = () => {
+        this.setState({
+            existingShapes: [],
+            deleteAlertVisible: true
         })
     };
 
@@ -44,11 +66,15 @@ class Canvas extends React.Component {
         this.checkIfManager();
     };
 
-    checkIfManager = () => {
+    checkIfManager = (callbackIfTrue) => {
         if (this.props.boardId) {
             getIsManagerForBoard(this.props.boardId)
                 .then(response => {
-                    this.setState({isManager: response.data});
+                    this.setState({isManager: response.data}, () => {
+                        if (callbackIfTrue) {
+                            callbackIfTrue();
+                        }
+                    });
                 })
                 .catch(() => {
                     this.setState({isManager: false})
@@ -178,10 +204,16 @@ class Canvas extends React.Component {
                     })
                     .then(() => {
                         if (!this.state.isManager) {
-                            this.checkIfManager();
+                            this.checkIfManager(() => {
+                                this.setState({managerAlertVisible: true});
+                            });
                         }
                     });
             });
+    };
+
+    dismissAlert = () => {
+        this.setState({managerAlertVisible: false, deleteAlertVisible: false});
     };
 
     render() {
@@ -195,11 +227,17 @@ class Canvas extends React.Component {
                 <header>
                     {this.state.isManager &&
                     <div className={'button-wrap'}>
-                        <Button onClick={this.onClickDelete} size={"sm"} variant={"danger"}>
+                        <Button onClick={this.onClickDelete} size={"sm"} variant={"danger"}
+                                disabled={this.state.existingShapes.length === 0}>
                             Delete all shapes :(
                         </Button>
                     </div>}
-                    <span>Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
+                    <span>
+                        <Alerts
+                            deleteAlertVisible={this.state.deleteAlertVisible}
+                            onClose={this.dismissAlert}
+                            managerAlertVisible={this.state.managerAlertVisible}/>
+                        Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
                 </header>
                 <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"}
                          color={this.state.color}

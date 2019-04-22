@@ -30,6 +30,18 @@ header {
     font-size: 30px;
 }
 
+header .alert {
+    color: #fff;
+    font-size: 17px;
+    right: 5px;
+    width: 79%;
+    float: right;
+    position: absolute;
+    z-index: 2;
+    height: 17%;
+}
+
+
 .konvajs-content {
     border: 1px solid #a0a0a0;
 }

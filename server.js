@@ -33,7 +33,10 @@ server.listen(port, () => {
 
 io.on("connection", socket => {
     socket.on('update_board', (data) => {
-        console.log('update board', data);
         io.emit(data.board_id, data);
     });
+
+    socket.on('delete_board', (data) => {
+        io.emit(`delete:${data.board_id}`, data.ip)
+    })
 });

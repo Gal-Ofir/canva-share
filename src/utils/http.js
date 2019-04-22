@@ -87,7 +87,7 @@ export const getAllBoards = () => {
 };
 
 export const deleteAllShapesByBoardId = (boardId) => {
-    socket.emit('delete_shapes', {board: boardId});
+    socket.emit('delete_board', {board_id: boardId, ip: window.localStorage.getItem(ID_KEY)});
     return axios({
         method: 'DELETE',
         url: `/${boardId}`
