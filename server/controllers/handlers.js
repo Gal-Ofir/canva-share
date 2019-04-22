@@ -49,6 +49,7 @@ const createUser = (req, res) => {
 };
 
 const getUserByIp = (req, res) => {
+    console.log(req.ips);
     userService.getUserByIp(req.ip)
         .then(response => {
             if (!response) {
