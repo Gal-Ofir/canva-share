@@ -24,15 +24,17 @@ app.get('/config/max', function(req, res) {
 });
 
 const server = require('http').createServer(app);
-const io = require('socket.io')(server);
+const io = require('socket.io').listen(server);
+
+
+
+server.listen(port, () => {
+    console.log(`Server up and running on port ${port}`)
+});
 
 io.on("connection", socket => {
     socket.on('update_board', (data) => {
         console.log('update board', data);
         socket.emit(data.board_id, data);
     });
-});
-
-server.listen(port, () => {
-    console.log(`Server up and running on port ${port}`)
 });
