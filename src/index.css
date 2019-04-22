@@ -60,3 +60,11 @@ header .alert {
 .modal-footer {
     justify-content: left;
 }
+
+.shapes-remaining {
+    font-size: 13px;
+    position: absolute;
+    z-index: 99999;
+    left: 30px;
+    top: 20px;
+}

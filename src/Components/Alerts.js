@@ -21,6 +21,12 @@ class Alerts extends React.Component {
                         But you can delete the shapes if you like, which is nice.
                     </p>
                 </Alert>
+                <Alert onClose={this.props.onClose} dismissible variant="warning" show={this.props.maxShapesAlertVisible}>
+                    <Alert.Heading>Whoops!</Alert.Heading>
+                    <p>
+                        You've reached the maximum shapes allowed to create per day. See you tomorrow!
+                    </p>
+                </Alert>
             </div>
         );
     }

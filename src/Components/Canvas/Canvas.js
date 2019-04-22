@@ -7,7 +7,9 @@ import {
     getIsManagerForBoard,
     deleteAllShapesByBoardId,
     addShape,
-    getShapesByBoardId
+    getShapesByBoardId,
+    getUser,
+    getMaxShapes
 } from "../../utils/http";
 import {Button} from "react-bootstrap";
 import DeleteModal from "./DeleteModal";
@@ -29,7 +31,10 @@ class Canvas extends React.Component {
             deleteModalVisible: false,
             shouldAddBoard: false,
             deleteAlertVisible: false,
-            managerAlertVisible: false
+            managerAlertVisible: false,
+            maxShapesAlertVisible: false,
+            shapesCreated: 0,
+            maxShapes: 0
         };
         if (props.boardId) {
             this.handleSocketData();
@@ -38,7 +43,6 @@ class Canvas extends React.Component {
 
     handleSocketData = () => {
         socket.on(this.props.boardId, (data) => {
-            console.log(data);
             if (!messageFromMe(data.ip)) {
                 const existingShapes = this.state.existingShapes;
                 existingShapes.push(data);
@@ -62,8 +66,25 @@ class Canvas extends React.Component {
     };
 
     componentDidMount = () => {
-        this.loadShapesFromDb();
         this.checkIfManager();
+        this.loadShapesFromDb();
+        this.getShapeLimits();
+    };
+
+    getShapeLimits = () => {
+        getUser()
+            .then(response => {
+                return response.data.shapes_created
+            })
+            .then(shapesCreated => {
+                getMaxShapes()
+                    .then(response => {
+                        this.setState({
+                            shapesCreated,
+                            maxShapes: response.data.maxShapes
+                        });
+                    });
+            });
     };
 
     checkIfManager = (callbackIfTrue) => {
@@ -71,7 +92,7 @@ class Canvas extends React.Component {
             getIsManagerForBoard(this.props.boardId)
                 .then(response => {
                     this.setState({isManager: response.data}, () => {
-                        if (callbackIfTrue) {
+                        if (response.data && callbackIfTrue) {
                             callbackIfTrue();
                         }
                     });
@@ -174,49 +195,62 @@ class Canvas extends React.Component {
         return result;
     };
 
+    canAddShape = () => {
+        return (this.state.shapesCreated < this.state.maxShapes);
+    };
+
     onCanvasClick = (event) => {
-        const data = this.getShapeData({
-            x: event.evt.layerX,
-            y: event.evt.layerY,
-            color: this.state.color,
-            shape: this.state.selectedShape,
-            width: this.state.width,
-            height: this.state.height,
-            text: this.state.text,
-            radius: this.state.radius,
-            board_id: this.props.boardId,
-            shouldAddBoard: this.state.shouldAddBoard
-        });
-        const existingShapes = this.state.existingShapes;
-        existingShapes.push(data);
-        this.setState({
-                existingShapes,
-                shouldAddBoard: false
-            },
-            () => {
-                addShape(data)
-                    .then(response => {
-                        if (response.error) {
-                            alert(`Failed to insert shape! ${response.error}`);
-                        }
-                        else {
-                        }
-                    })
-                    .then(() => {
-                        if (!this.state.isManager) {
-                            this.checkIfManager(() => {
-                                this.setState({managerAlertVisible: true});
-                            });
-                        }
-                    });
+        if (this.canAddShape()) {
+            const data = this.getShapeData({
+                x: event.evt.layerX,
+                y: event.evt.layerY,
+                color: this.state.color,
+                shape: this.state.selectedShape,
+                width: this.state.width,
+                height: this.state.height,
+                text: this.state.text,
+                radius: this.state.radius,
+                board_id: this.props.boardId,
+                shouldAddBoard: this.state.shouldAddBoard
             });
+            const existingShapes = this.state.existingShapes;
+            let shapesCreated = this.state.shapesCreated;
+            existingShapes.push(data);
+            shapesCreated++;
+            this.setState({
+                    existingShapes,
+                    shouldAddBoard: false,
+                    shapesCreated
+                },
+                () => {
+                    addShape(data)
+                        .then(response => {
+                            if (response.error) {
+                                alert(`Failed to insert shape! ${response.error}`);
+                            }
+                            else {
+                            }
+                        })
+                        .then(() => {
+                            if (!this.state.isManager) {
+                                this.checkIfManager(() => {
+                                    this.setState({managerAlertVisible: true});
+                                });
+                            }
+                        });
+                });
+        }
+        else {
+            this.setState({maxShapesAlertVisible: true});
+        }
     };
 
     dismissAlert = () => {
-        this.setState({managerAlertVisible: false, deleteAlertVisible: false});
+        this.setState({managerAlertVisible: false, deleteAlertVisible: false, maxShapesAlertVisible: false});
     };
 
     render() {
+        console.log(this.state.maxShapes, this.state.shapesCreated);
         return (
             <div id="outer-container">
                 {this.state.deleteModalVisible &&
@@ -235,9 +269,14 @@ class Canvas extends React.Component {
                     <span>
                         <Alerts
                             deleteAlertVisible={this.state.deleteAlertVisible}
+                            maxShapesAlertVisible={this.state.maxShapesAlertVisible}
+                            managerAlertVisible={this.state.managerAlertVisible}
                             onClose={this.dismissAlert}
-                            managerAlertVisible={this.state.managerAlertVisible}/>
+                        />
                         Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
+                    <div className={'shapes-remaining'} style={{color: this.state.color}}>
+                        Shapes created today: {this.state.shapesCreated} out of {this.state.maxShapes}
+                    </div>
                 </header>
                 <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"}
                          color={this.state.color}

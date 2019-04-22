@@ -93,3 +93,10 @@ export const deleteAllShapesByBoardId = (boardId) => {
         url: `/${boardId}`
     })
 };
+
+export const getMaxShapes = () => {
+    return axios({
+        method: 'GET',
+        url: '/config/max'
+    })
+};
