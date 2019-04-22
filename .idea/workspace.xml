@@ -3,19 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="68f6114e-1647-4606-839c-88875e77d5b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/handlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/handlers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/db/users/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/users/service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/utils/hash.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/hash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Welcome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Welcome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Welcome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/http.js" afterDir="false" />
     </list>
     <list id="dcfdfd3c-203d-4ded-9558-c5b298a0b1ca" name="intellij_shit" comment="">
@@ -119,7 +107,7 @@
           <entry key="gitignore" value="2" />
           <entry key="html" value="5" />
           <entry key="ico" value="1" />
-          <entry key="js" value="119" />
+          <entry key="js" value="120" />
           <entry key="json" value="8" />
           <entry key="shapes" value="9" />
           <entry key="sql" value="1" />
@@ -136,7 +124,7 @@
           <entry key="HTML" value="5" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="8" />
-          <entry key="JavaScript" value="119" />
+          <entry key="JavaScript" value="120" />
           <entry key="PLAIN_TEXT" value="5" />
           <entry key="SVG" value="2" />
           <entry key="Scratch" value="1" />
@@ -149,9 +137,9 @@
           <entry key="env" value="146" />
           <entry key="gitignore" value="58" />
           <entry key="html" value="52" />
-          <entry key="js" value="26391" />
+          <entry key="js" value="26444" />
           <entry key="json" value="150" />
-          <entry key="txt" value="224" />
+          <entry key="txt" value="373" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -160,8 +148,8 @@
           <entry key="CSS" value="1489" />
           <entry key="HTML" value="52" />
           <entry key="JSON" value="150" />
-          <entry key="JavaScript" value="26391" />
-          <entry key="PLAIN_TEXT" value="348" />
+          <entry key="JavaScript" value="26444" />
+          <entry key="PLAIN_TEXT" value="497" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -173,11 +161,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state relative-caret-position="180">
+              <caret line="170" column="20" lean-forward="true" selection-start-line="170" selection-start-column="20" selection-end-line="170" selection-end-column="20" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -186,10 +174,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/db/users/service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-160">
+              <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+            <state>
+              <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -215,11 +212,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+            <state relative-caret-position="367">
+              <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -239,8 +236,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/http.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="323">
+              <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -335,11 +332,11 @@
         <option value="$PROJECT_DIR$/src/Welcome.css" />
         <option value="$PROJECT_DIR$/server/controllers/index.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/server/db/users/service.js" />
         <option value="$PROJECT_DIR$/server/controllers/handlers.js" />
-        <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/src/utils/http.js" />
         <option value="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" />
+        <option value="$PROJECT_DIR$/server/db/users/service.js" />
+        <option value="$PROJECT_DIR$/src/utils/http.js" />
+        <option value="$PROJECT_DIR$/server.js" />
       </list>
     </option>
   </component>
@@ -475,7 +472,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555948750208" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555950313468" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.1" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -580,7 +577,7 @@
       <updated>1555679627167</updated>
       <workItem from="1555679632082" duration="53986000" />
       <workItem from="1555837897210" duration="11005000" />
-      <workItem from="1555933983553" duration="13750000" />
+      <workItem from="1555933983553" duration="15330000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1555690346785</created>
@@ -624,7 +621,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555938002710</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Code cleanup + identify via md5 hash of ip, saved in local storage, to resolve dynamic proxies from heroku issue.">
+      <created>1555948858751</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555948858751</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -660,7 +664,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78741000" />
+    <option name="totallyTimeSpent" value="80321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -718,7 +722,8 @@
     <MESSAGE value="Board owner delete shapes" />
     <MESSAGE value="Implement web sockets for real time shape updates" />
     <MESSAGE value="Testing sockets on heroku hosting" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing sockets on heroku hosting" />
+    <MESSAGE value="Code cleanup + identify via md5 hash of ip, saved in local storage, to resolve dynamic proxies from heroku issue." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code cleanup + identify via md5 hash of ip, saved in local storage, to resolve dynamic proxies from heroku issue." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/public/favicon.ico">
@@ -933,13 +938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Welcome.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -954,16 +952,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="das://9cbeccbd-ea31-4800-9dd6-614d531cdfcc/database/canva_share/schema/public/table/users">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -974,17 +962,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" lean-forward="true" selection-start-column="26" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/controllers/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/users/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="56" column="6" selection-start-line="56" selection-start-column="6" selection-end-line="56" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -995,30 +993,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/server/db/users/service.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="37" column="27" lean-forward="true" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-160">
+          <caret line="17" column="12" lean-forward="true" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="9" lean-forward="true" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state relative-caret-position="180">
+          <caret line="170" column="20" lean-forward="true" selection-start-line="170" selection-start-column="20" selection-end-line="170" selection-end-column="20" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="2" lean-forward="true" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
         </state>
       </provider>
     </entry>

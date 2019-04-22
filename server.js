@@ -29,9 +29,7 @@ const io = require('socket.io')(server);
 io.on("connection", socket => {
     socket.on('update_board', (data) => {
         console.log('update board', data);
-        const {board} = data;
-        const newShape = data.data;
-        socket.emit(board, newShape);
+        socket.emit(data.board_id, data);
     });
 });
 
