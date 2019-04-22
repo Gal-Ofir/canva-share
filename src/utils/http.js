@@ -12,6 +12,13 @@ export const initSocket = () => {
 export const addShape = (data) => {
     data = {...data, ip: window.localStorage.getItem(ID_KEY)};
     socket.emit('update_board', data);
+    console.log(data.board_id);
+    socket.emit(
+        data.board_id,
+        {
+            from: 'User',
+            text: 'Hey'
+        });
     return axios({
         method: 'POST',
         url: '/shape',

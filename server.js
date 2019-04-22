@@ -19,13 +19,12 @@ app.get('/:boardId', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.get('/config/max', function(req, res) {
-   res.json({maxShapes: process.env.MAX_SHAPES});
+app.get('/config/max', function (req, res) {
+    res.json({maxShapes: process.env.MAX_SHAPES});
 });
 
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
-
 
 
 server.listen(port, () => {
@@ -35,6 +34,6 @@ server.listen(port, () => {
 io.on("connection", socket => {
     socket.on('update_board', (data) => {
         console.log('update board', data);
-        socket.emit(data.board_id, data);
+        io.emit(data.board_id, data);
     });
 });
