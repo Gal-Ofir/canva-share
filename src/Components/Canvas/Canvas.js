@@ -329,7 +329,7 @@ class Canvas extends React.Component {
                         }
                     </div>
                     <span>
-                        Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
+                        Board {decodeURI(this.props.boardId)} {this.state.isManager && '(manager)'} </span>
                 </div>
 
                 <CanvasContainer

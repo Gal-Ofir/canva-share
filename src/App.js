@@ -12,7 +12,7 @@ class App extends React.Component {
             title: this.path === "/" ? 'Canva-Share' : this.path.replace('/', ''),
             identifier: ''
         };
-        document.getElementsByTagName('title')[0].textContent = this.state.title;
+        document.getElementsByTagName('title')[0].textContent = decodeURI(this.state.title);
         initSocket();
     }
 
