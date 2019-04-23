@@ -4,8 +4,18 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const controllers = require('./server/controllers');
+const userService = require('./server/db/users');
 const port = process.env.PORT || 8080;
+const schedule = require('node-schedule');
 
+// Reset shapesCreated every 00:00
+schedule.scheduleJob('0 0 * * *', function(){
+    console.log('Reset shapes created count for all users initiated.');
+    userService.resetShapesCreatedForAllUsers()
+        .then(() => {
+            console.log('Shapes reset on', new Date());
+        });
+});
 
 app.use(express.static(path.join(__dirname, 'build')));
 
