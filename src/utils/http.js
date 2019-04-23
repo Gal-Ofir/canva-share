@@ -5,14 +5,12 @@ const ID_KEY = `_id:${window.location.host}`;
 export let socket;
 
 export const initSocket = () => {
-    console.log(document.location.origin);
     socket = socketIOClient(document.location.origin);
 };
 
 export const addShape = (data) => {
     data = {...data, ip: window.localStorage.getItem(ID_KEY)};
     socket.emit('update_board', data);
-    console.log(data.board_id);
     socket.emit(
         data.board_id,
         {
