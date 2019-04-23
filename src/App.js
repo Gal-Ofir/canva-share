@@ -26,7 +26,7 @@ class App extends React.Component {
                 {this.path === '/' ?
                     <Welcome/> :
                     <Canvas
-                        boardId={this.state.title}
+                        boardId={decodeURI(this.state.title)}
                     />
                 }
             </div>

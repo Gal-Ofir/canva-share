@@ -110,6 +110,7 @@ class Canvas extends React.Component {
             getIsManagerForBoard(this.props.boardId)
                 .then(response => {
                     this.setState({isManager: response.data}, () => {
+                        console.log(response.data);
                         if (response.data && callbackIfTrue) {
                             callbackIfTrue();
                         }
@@ -329,7 +330,7 @@ class Canvas extends React.Component {
                         }
                     </div>
                     <span>
-                        Board {decodeURI(this.props.boardId)} {this.state.isManager && '(manager)'} </span>
+                        Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
                 </div>
 
                 <CanvasContainer

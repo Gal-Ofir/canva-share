@@ -139,9 +139,9 @@
           <entry key="env" value="147" />
           <entry key="gitignore" value="58" />
           <entry key="html" value="53" />
-          <entry key="js" value="32729" />
+          <entry key="js" value="32758" />
           <entry key="json" value="150" />
-          <entry key="txt" value="538" />
+          <entry key="txt" value="574" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -150,8 +150,8 @@
           <entry key="CSS" value="2217" />
           <entry key="HTML" value="53" />
           <entry key="JSON" value="150" />
-          <entry key="JavaScript" value="32729" />
-          <entry key="PLAIN_TEXT" value="662" />
+          <entry key="JavaScript" value="32758" />
+          <entry key="PLAIN_TEXT" value="698" />
           <entry key="Scratch" value="7" />
         </counts>
       </usages-collector>
@@ -168,13 +168,12 @@
         <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="401">
-              <caret line="331" column="40" selection-start-line="331" selection-start-column="31" selection-end-line="331" selection-end-column="40" />
+              <caret line="120" column="19" lean-forward="true" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#901#1383#0" />
                 <element signature="e#1430#1446#0" />
                 <element signature="e#1901#1917#0" />
-                <element signature="e#1821#2148#0" />
                 <element signature="e#1190#1777#0" />
                 <element signature="e#2977#3523#0" />
                 <element signature="e#4839#6314#0" />
@@ -192,7 +191,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="das://9cbeccbd-ea31-4800-9dd6-614d531cdfcc/database/canva_share/schema/public/table/users">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -204,11 +203,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
+            <state relative-caret-position="374">
+              <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -297,12 +296,13 @@
       <find>refreshCanvas</find>
       <find>canvasRoom</find>
       <find>is</find>
-      <find>isManager</find>
       <find>console</find>
       <find>alertVisible</find>
       <find>maxShapes</find>
       <find>props.ma</find>
       <find>pointer</find>
+      <find>isManager</find>
+      <find>decode</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -355,8 +355,8 @@
         <option value="$PROJECT_DIR$/src/utils/http.js" />
         <option value="$PROJECT_DIR$/src/Welcome.js" />
         <option value="$PROJECT_DIR$/src/Welcome.css" />
-        <option value="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
+        <option value="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" />
       </list>
     </option>
   </component>
@@ -493,7 +493,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556019015626" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556019695547" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.1" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -599,7 +599,7 @@
       <updated>1555679627167</updated>
       <workItem from="1555679632082" duration="53986000" />
       <workItem from="1555837897210" duration="11005000" />
-      <workItem from="1555933983553" duration="39656000" />
+      <workItem from="1555933983553" duration="40423000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1555690346785</created>
@@ -713,7 +713,14 @@
       <option name="project" value="LOCAL" />
       <updated>1556018816057</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="decodeURI for path, smoother title.">
+      <created>1556019045273</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556019045273</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -749,7 +756,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104647000" />
+    <option name="totallyTimeSpent" value="105414000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -769,7 +776,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.17697228" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.17697228" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.2527115" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.329718" />
@@ -779,7 +786,7 @@
       <window_info anchor="bottom" id="Message" order="5" />
       <window_info anchor="bottom" id="TypeScript" order="6" weight="0.329718" />
       <window_info anchor="bottom" id="Find" order="7" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="8" visible="true" weight="0.29175705" />
+      <window_info active="true" anchor="bottom" id="Run" order="8" visible="true" weight="0.29175705" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
@@ -813,7 +820,8 @@
     <MESSAGE value="Added shapes reset at midnight daily." />
     <MESSAGE value="Remove console logs from front end" />
     <MESSAGE value="Finishing touches" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finishing touches" />
+    <MESSAGE value="decodeURI for path, smoother title." />
+    <option name="LAST_COMMIT_MESSAGE" value="decodeURI for path, smoother title." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/9cbeccbd-ea31-4800-9dd6-614d531cdfcc/console.sql">
@@ -1075,16 +1083,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://9cbeccbd-ea31-4800-9dd6-614d531cdfcc/database/canva_share/schema/public/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-          <column-attributes>
-            <column name="boards_owned" languageId="JSON" />
-          </column-attributes>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1129,16 +1127,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
-          <caret line="331" column="40" selection-start-line="331" selection-start-column="31" selection-end-line="331" selection-end-column="40" />
+          <caret line="120" column="19" lean-forward="true" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#901#1383#0" />
             <element signature="e#1430#1446#0" />
             <element signature="e#1901#1917#0" />
-            <element signature="e#1821#2148#0" />
             <element signature="e#1190#1777#0" />
             <element signature="e#2977#3523#0" />
             <element signature="e#4839#6314#0" />
@@ -1146,13 +1153,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="91" selection-start-line="14" selection-start-column="91" selection-end-line="14" selection-end-column="91" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+    <entry file="das://9cbeccbd-ea31-4800-9dd6-614d531cdfcc/database/canva_share/schema/public/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="boards_owned" languageId="JSON" />
+          </column-attributes>
         </state>
       </provider>
     </entry>
