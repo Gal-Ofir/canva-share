@@ -12,7 +12,7 @@ import {
     getMaxShapes
 } from "../../utils/http";
 import {Button} from "react-bootstrap";
-import DeleteModal from "./DeleteModal";
+import DeleteModal from "../Modals/DeleteModal";
 import Alerts from "../Alerts";
 
 class Canvas extends React.Component {
@@ -20,6 +20,8 @@ class Canvas extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            elementWidth: 0,
+            elementHeight: 0,
             color: '#fff',
             selectedShape: 'RECT',
             height: 50,
@@ -66,9 +68,25 @@ class Canvas extends React.Component {
     };
 
     componentDidMount = () => {
+        window.addEventListener("resize", this.updateDimensions);
         this.checkIfManager();
         this.loadShapesFromDb();
         this.getShapeLimits();
+    };
+
+    updateDimensions = () => {
+        this.setState({
+            elementHeight: window.innerHeight,
+            elementWidth: window.innerWidth
+        });
+    };
+
+    componentWillMount = () => {
+        this.updateDimensions();
+    };
+
+    componentWillUnmount = () => {
+        window.removeEventListener("resize", this.updateDimensions);
     };
 
     getShapeLimits = () => {
@@ -163,6 +181,10 @@ class Canvas extends React.Component {
             });
     };
 
+    navHome = () => {
+        document.location.href = "/";
+    };
+
     /**
      * Returns relevant data to save in db,
      * In order to reduce overhead of saving irrelevant data for different shapes
@@ -206,10 +228,10 @@ class Canvas extends React.Component {
                 y: event.evt.layerY,
                 color: this.state.color,
                 shape: this.state.selectedShape,
-                width: this.state.width,
-                height: this.state.height,
+                width: Math.min(100, this.state.width),
+                height: Math.min(100, this.state.height),
                 text: this.state.text,
-                radius: this.state.radius,
+                radius: Math.min(100, this.state.radius),
                 board_id: this.props.boardId,
                 shouldAddBoard: this.state.shouldAddBoard
             });
@@ -250,35 +272,26 @@ class Canvas extends React.Component {
     };
 
     render() {
-        console.log(this.state.maxShapes, this.state.shapesCreated);
+        const sideBarChildren = <div style={{
+            color: this.state.color,
+            fontSize: '13px',
+            width: '100%',
+            display: 'block',
+            cursor: 'default',
+            marginLeft: '8%',
+            padding: '0',
+            marginBottom: '10%',
+            marginTop: '-30px'
+        }}>
+            Shapes created today: {this.state.shapesCreated} out of {this.state.maxShapes}
+        </div>;
         return (
+
             <div id="outer-container">
-                {this.state.deleteModalVisible &&
-                <DeleteModal
-                    onDeleteModalClose={this.onDeleteModalClose}
-                    handleDelete={this.handleDelete}/>
-                }
-                <header>
-                    {this.state.isManager &&
-                    <div className={'button-wrap'}>
-                        <Button onClick={this.onClickDelete} size={"sm"} variant={"danger"}
-                                disabled={this.state.existingShapes.length === 0}>
-                            Delete all shapes :(
-                        </Button>
-                    </div>}
-                    <span>
-                        <Alerts
-                            deleteAlertVisible={this.state.deleteAlertVisible}
-                            maxShapesAlertVisible={this.state.maxShapesAlertVisible}
-                            managerAlertVisible={this.state.managerAlertVisible}
-                            onClose={this.dismissAlert}
-                        />
-                        Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
-                    <div className={'shapes-remaining'} style={{color: this.state.color}}>
-                        Shapes created today: {this.state.shapesCreated} out of {this.state.maxShapes}
-                    </div>
-                </header>
                 <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"}
+                         children={sideBarChildren}
+                         parentWidth={this.state.elementWidth}
+                         parentHeight={this.state.elementHeight}
                          color={this.state.color}
                          height={this.state.height}
                          width={this.state.width}
@@ -292,12 +305,39 @@ class Canvas extends React.Component {
                          onRadiusChange={this.onRadiusChange}
                          onTextChange={this.onTextChange}
                 />
-                <div id="page-wrap">
-                    <CanvasContainer
-                        onCanvasClick={this.onCanvasClick}
-                        existingShapes={this.state.existingShapes}
+                <DeleteModal
+                    onDeleteModalClose={this.onDeleteModalClose}
+                    handleDelete={this.handleDelete}
+                    deleteModalVisible={this.state.deleteModalVisible}/>
+
+                <div className={'header'} style={{fontSize: Math.floor(this.state.elementWidth * 0.015)}}>
+                    <Alerts
+                        deleteAlertVisible={this.state.deleteAlertVisible}
+                        maxShapesAlertVisible={this.state.maxShapesAlertVisible}
+                        managerAlertVisible={this.state.managerAlertVisible}
+                        onClose={this.dismissAlert}
                     />
+                    <div className={'button-wrap'}>
+                        <Button onClick={this.navHome} size={"sm"} variant={"secondary"} style={{marginRight: '2px'}}>
+                            Home
+                        </Button>
+                        {this.state.isManager &&
+                        <Button onClick={this.onClickDelete} size={"sm"} variant={"danger"}
+                                disabled={this.state.existingShapes.length === 0}>
+                            Delete all shapes :(
+                        </Button>
+                        }
+                    </div>
+                    <span>
+                        Board {this.props.boardId} {this.state.isManager && '(manager)'} </span>
                 </div>
+
+                <CanvasContainer
+                    onCanvasClick={this.onCanvasClick}
+                    parentWidth={this.state.elementWidth}
+                    parentHeight={this.state.elementHeight}
+                    existingShapes={this.state.existingShapes}
+                />
             </div>
         );
     }

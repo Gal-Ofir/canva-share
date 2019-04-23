@@ -1,6 +1,7 @@
 import React from "react";
 import "./Welcome.css";
 import {getAllBoards} from "./utils/http";
+import AddBoardModal from "./Components/Modals/AddBoardModal";
 
 class Welcome extends React.Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class Welcome extends React.Component {
         this.state = {
             height: 0,
             width: 0,
-            boards: []
+            boards: [],
+            addBoardModalVisible: false
         }
     }
 
@@ -37,11 +39,20 @@ class Welcome extends React.Component {
 
     handleCreateNewClick = (event) => {
         event.preventDefault();
-        alert('jk');
+        this.setState({addBoardModalVisible: true})
+    };
+
+
+    onAddBoardModalClose = () => {
+        this.setState({addBoardModalVisible: false});
     };
 
     render() {
         return <div className={'welcome-container'} style={{height: this.state.height, width: this.state.width}}>
+            <AddBoardModal
+                addBoardModalVisible={this.state.addBoardModalVisible}
+                onAddBoardModalClose={this.onAddBoardModalClose}
+                existingBoards={this.state.boards}/>
                 <div className={'welcome-message'}>
                     Welcome to Canva-Share!
                     <div className={'welcome-submessage'}>

@@ -26,7 +26,7 @@ class DeleteModal extends React.Component {
     render() {
         const {disabled} = this.state;
         return (
-            <Modal show onHide={this.handleClose}>
+            <Modal show={this.props.deleteModalVisible} onHide={this.handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Delete board</Modal.Title>
                 </Modal.Header>

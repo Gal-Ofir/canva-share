@@ -6,28 +6,17 @@ import ShapePicker from "../Shapes/ShapePicker"
 
 class Sidebar extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            height: 0,
-            width: 0
-        };
-    }
 
     getStyles = () => {
         return {
             bmBurgerButton: {
-                position: 'fixed',
-                width: '36px',
-                height: '30px',
-                left: '36px',
-                top: '36px',
+                display: 'none'
             },
             bmBurgerBars: {
-                background: 'rgb(148, 168, 255)'
+                display: 'none'
             },
             bmBurgerBarsHover: {
-                background: '#a90000'
+                display: 'none'
             },
             bmCrossButton: {
                 display: 'none'
@@ -36,9 +25,7 @@ class Sidebar extends React.Component {
                 background: '#bdc3c7'
             },
             bmMenuWrap: {
-                position: 'fixed',
-                height: this.state.height,
-                width: Math.floor(this.state.width * 0.2)
+                position: 'absolute'
             },
             bmMenu: {
                 overflow: 'hidden'
@@ -47,21 +34,18 @@ class Sidebar extends React.Component {
                 fill: '#373a47'
             },
             bmItemList: {
-                color: '#b8b7ad',
-                padding: '0.8em'
+                padding: '0'
             },
             bmItem: {
                 cursor: 'pointer',
                 display: 'block',
                 padding: '5px',
                 marginLeft: '32%',
-                marginBottom: '20%'
-            },
-            bmOverlay: {
-                background: 'rgba(0, 0, 0, 0.3)'
+                marginBottom: Math.floor(this.props.parentHeight / 16)
             }
-        };
+        }
     };
+
 
     handleShapeClick = (event) => {
         this.props.setShape(event.target.id.toUpperCase());
@@ -90,35 +74,27 @@ class Sidebar extends React.Component {
         this.props.onHeightChange(event.target.value);
     };
 
-    componentWillMount = () => {
-        this.updateDimensions();
-    };
-
-    componentDidMount = () => {
-        window.addEventListener("resize", this.updateDimensions);
-    };
-
-    updateDimensions = () => {
-        this.setState({
-            height: window.innerHeight,
-            width: window.innerWidth
-        });
-    };
-
 
     render() {
         return (
-            <Menu styles={this.getStyles()} noOverlay isOpen={true} disableCloseOnEsc >
+            <Menu width={'18%'} styles={this.getStyles()} noOverlay isOpen={true} disableCloseOnEsc>
+                {this.props.children}
                 <div id={"rect"} className={"rect"} style={{backgroundColor: this.props.color}}
                      onClick={this.handleShapeClick}>{""}</div>
 
                 <div id={"circle"} className={"circle"} style={{backgroundColor: this.props.color}}
                      onClick={this.handleShapeClick}>{""}</div>
 
-                <div id={"triangle"} className={"triangle"} style={{
-                    borderBottom: `50px solid ${this.props.color}`, padding: 0,
-                    marginLeft: '30%',
-                    marginTop: '-11%'
+                <div id={"triangle"} style={{
+                    borderBottom: `${Math.floor(this.props.parentWidth*0.02)}px solid ${this.props.color}`,
+                    width: 0,
+                    height: 0,
+                    borderTop: `${Math.floor(this.props.parentHeight*0.01)}px solid transparent`,
+                    borderLeft: `${Math.floor(this.props.parentWidth*0.015)}px solid transparent`,
+                    borderRight: `${Math.floor(this.props.parentWidth*0.015)}px solid transparent`,
+                    padding: 0,
+                    marginLeft: '32%',
+                    marginTop: `${Math.floor(this.props.parentHeight / 8)}`,
                 }}
                      onClick={this.handleShapeClick}>{""}</div>
 

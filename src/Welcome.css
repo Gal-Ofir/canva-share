@@ -1,19 +1,21 @@
 .welcome-container {
     /*padding: 2%;*/
     background: url("images/landing-page.png");
-    text-align:center;
+    text-align: center;
 }
 
 .canvas {
     background: url("images/canvas.jpg");
-    width: 10%;
-    min-height: 10%;
+    min-height: 15%;
+    min-width: 15%;
     font-family: 'Gloria Hallelujah', cursive;
     font-size: 30px;
-    margin:1%;
+    margin: 1%;
     border-radius: 20px;
     display: inline-grid;
-    color: #b819f9;
+    color: #8b03f9;
+    justify-content: baseline;
+
 }
 
 .canvas:hover {

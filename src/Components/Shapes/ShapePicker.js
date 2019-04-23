@@ -52,6 +52,7 @@ class ShapePicker extends React.Component {
                 <div style={{marginBottom: '8px', color: color}}>Choose a color...</div>
 
                 <GithubPicker
+                    width={'70%'}
                     color={color}
                     onChangeComplete={this.props.onChangeComplete}
                     onChange={this.props.onChange}

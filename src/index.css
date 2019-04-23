@@ -2,9 +2,23 @@
 @import url('https://fonts.googleapis.com/css?family=Dokdo|Gloria+Hallelujah');
 @import url('https://fonts.googleapis.com/css?family=Schoolbell');
 
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+    #primary { width:67%; }
+    #secondary { width:30%; margin-left:3%;}
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    .konvajs-content { width:100%; }
+    .bm-menu { width:100%; margin:0; border:none; }
+}
+
 html {
     height: 100%
 }
+
+
+img { max-width: 100%; }
 
 body {
   height: 100%;
@@ -21,28 +35,30 @@ a {
     text-decoration: none;
 }
 
-header {
-    font-family: 'Gloria Hallelujah', cursive;
-    width: 100%;
-    float: right;
-    margin-top: 10px;
+.header {
+    position: absolute;
     text-align: center;
+    display: flex;
+    width: 100%;
+    left: 20%;
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-top: 10px;
     font-size: 30px;
 }
 
-header .alert {
+.header .alert {
     color: #fff;
     font-size: 17px;
-    right: 5px;
-    width: 79%;
+    left: -20px;
+    width: 80%;
     float: right;
     position: absolute;
-    z-index: 2;
-    height: 17%;
+    z-index: 11;
 }
 
 
 .konvajs-content {
+    position:absolute;
     border: 1px solid #a0a0a0;
 }
 
@@ -51,20 +67,14 @@ header .alert {
 }
 
 .button-wrap {
-    width: 150px;
-    position: absolute;
-    left: 23%;
-    top: 1%;
+    margin-right: 3%;
+    z-index:10;
 }
 
 .modal-footer {
     justify-content: left;
 }
 
-.shapes-remaining {
-    font-size: 13px;
-    position: absolute;
-    z-index: 99999;
-    left: 30px;
-    top: 20px;
+.github-picker {
+    box-sizing: content-box;
 }
