@@ -55,6 +55,9 @@ const resetShapesCreatedForAllUsers = () => {
 };
 
 const isUserOwnerByIp = (ip, boardId) => {
+    if (boardId === "" || !boardId) {
+        return false;
+    }
     return getUserByIp(ip).then(user => {
         const {boards_owned} = user;
         return boards_owned.boards.includes(boardId);

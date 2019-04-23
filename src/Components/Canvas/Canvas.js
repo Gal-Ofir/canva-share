@@ -109,12 +109,13 @@ class Canvas extends React.Component {
         if (this.props.boardId) {
             getIsManagerForBoard(this.props.boardId)
                 .then(response => {
-                    this.setState({isManager: response.data}, () => {
-                        console.log(response.data);
-                        if (response.data && callbackIfTrue) {
-                            callbackIfTrue();
-                        }
-                    });
+                    if (!response.data.error) {
+                        this.setState({isManager: response.data}, () => {
+                            if (response.data && callbackIfTrue) {
+                                callbackIfTrue();
+                            }
+                        });
+                    }
                 })
                 .catch(() => {
                     this.setState({isManager: false})
