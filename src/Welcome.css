@@ -5,17 +5,22 @@
 }
 
 .canvas {
-    background: url("images/canvas.jpg");
-    min-height: 15%;
-    min-width: 15%;
+    background: url("images/whiteboard.png");
+    background-size: cover;
     font-family: 'Gloria Hallelujah', cursive;
-    font-size: 30px;
+    width: 200px;
+    height: 200px;
     margin: 1%;
-    border-radius: 20px;
     display: inline-grid;
-    color: #8b03f9;
-    justify-content: baseline;
+    color: #010002;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
+.canvas span {
+    margin-top: 40%;
 }
 
 .canvas:hover {

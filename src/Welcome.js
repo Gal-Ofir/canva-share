@@ -59,11 +59,11 @@ class Welcome extends React.Component {
                         Pick an existing board or create a new one and get started with your friends
                     </div>
                 </div>
-            <div className={"canvas"} onClick={this.handleCreateNewClick}>Create new...</div>
+            <div className={"canvas"} onClick={this.handleCreateNewClick}><span>Create new...</span></div>
             {this.state.boards.length > 0 && this.state.boards.map((board, i) => {
                 return (<a key={i} href={`/${board}`}>
                         <div className={'canvas'}>
-                            {board}
+                            <span>{board}</span>
                         </div>
                 </a>);
             })}
