@@ -16,7 +16,7 @@ npm start
 You can view the app at <i><u><link>http://localhost:8080</link></u></i>
 
 
-##Main libraries and frameworks
+## Main libraries and frameworks
 
 <li><u>express</u> - Node.js server. </li>
 <li><u>sequelize</u> - Node.js ORM for most relational databases. </li>
