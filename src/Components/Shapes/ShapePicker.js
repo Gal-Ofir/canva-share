@@ -10,33 +10,64 @@ const shapeTypes = {
 
 class ShapePicker extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            colorPickerOpen: false
+        }
+    }
+
+    handleClick = () => {
+        this.setState({colorPickerOpen: !this.state.colorPickerOpen});
+    };
+
+
+    onChangeComplete = (color) => {
+        this.setState({colorPickerOpen: false});
+        this.props.onChangeComplete(color);
+    };
+
+
     resolveShapeModifier = () => {
         switch (this.props.shape) {
             case "TRIANGLE":
             case "CIRCLE":
                 return (
                     <div style={{marginTop: '8px'}}>
-                    <span> Size (radius): </span>
-                    <input value={this.props.radius} type={"number"} style={{width: '40px', height: '20px'}} max={100} min={5}
-                        onChange={this.props.onRadiusChange}/>
+                        <span> Size (radius): </span>
+                        <input value={this.props.radius} type={"number"} style={{
+                            width: Math.floor(this.props.parentWidth * 0.04),
+                            height: this.props.parentHeight * 0.035
+                        }} max={100} min={5}
+                               onChange={this.props.onRadiusChange}/>
                     </div>
                 );
             case "RECT":
                 return (
                     <div style={{marginTop: '8px'}}>
                         <span> Height: </span>
-                        <input type={"number"} style={{width: '40px', height: '20px'}} max={100} min={5}
-                        onChange={this.props.onHeightChange} value={this.props.height}/>
-                        <div> <span>Width: </span>
-                        <input type={"number"} style={{width: '40px', height: '20px', marginLeft: '5px'}} max={100} min={5}
-                               onChange={this.props.onWidthChange} value={this.props.width}/>
+                        <input type={"number"} style={{
+                            width: Math.floor(this.props.parentWidth * 0.04),
+                            height: this.props.parentHeight * 0.035
+                        }} max={100} min={5}
+                               onChange={this.props.onHeightChange} value={this.props.height}/>
+                        <div><span>Width: </span>
+                            <input type={"number"} style={{
+                                width: Math.floor(this.props.parentWidth * 0.04),
+                                height: this.props.parentHeight * 0.035,
+                                marginLeft: '5px'
+                            }} max={100} min={5}
+                                   onChange={this.props.onWidthChange} value={this.props.width}/>
                         </div>
                     </div>
                 );
             case "TEXT":
                 return <div style={{marginTop: '8px'}}>
-                    <div> Enter text: </div>
-                    <input value={this.props.text} type={"text"} style={{width: '80%', height: '20px'}}
+                    <div> Enter text:</div>
+                    <input value={this.props.text} type={"text"} style={{
+                        width: Math.floor(this.props.parentWidth * 0.1),
+                        height: this.props.parentHeight * 0.035
+                    }}
                            onChange={this.props.onTextChange}/>
                 </div>;
             default:
@@ -45,22 +76,24 @@ class ShapePicker extends React.Component {
     };
 
     render() {
-        const color = this.props.color;
         const shapeModifier = this.resolveShapeModifier();
         return (
-            <div style={{fontSize: '16px'}}>
-                <div style={{marginBottom: '8px', color: color}}>Choose a color...</div>
-
+            <div style={{fontSize: this.props.parentHeight / 35}}>
+                <div style={{marginBottom: '8px', color: this.props.color, cursor: 'pointer'}}
+                     onClick={this.handleClick}
+                     onBlur={this.handleBlur}>Choose a color...
+                </div>
+                {this.state.colorPickerOpen &&
                 <GithubPicker
-                    width={'70%'}
-                    color={color}
-                    onChangeComplete={this.props.onChangeComplete}
+                    color={this.props.color}
+                    onChangeComplete={this.onChangeComplete}
                     onChange={this.props.onChange}
                 />
+                }
                 <div style={{color: "#ffffff", marginTop: '8px'}}>
                     Current shape: {shapeTypes[this.props.shape]}
                     {shapeModifier}
-                    </div>
+                </div>
             </div>
 
         );

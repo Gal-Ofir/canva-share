@@ -276,7 +276,7 @@ class Canvas extends React.Component {
     render() {
         const sideBarChildren = <div style={{
             color: this.state.color,
-            fontSize: '13px',
+            fontSize: this.state.elementHeight / 35,
             width: '100%',
             display: 'block',
             cursor: 'default',

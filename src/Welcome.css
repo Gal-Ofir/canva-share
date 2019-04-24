@@ -1,6 +1,11 @@
-.welcome-container {
+.welcome-container, .bm-menu {
     /*padding: 2%;*/
-    background: url("images/landing-page.png");
+    /*background: url("images/landing-page.png");*/
+    /*text-align: center;*/
+    background: #83a4d4;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: -webkit-fill-available;
     text-align: center;
 }
 
@@ -10,13 +15,14 @@
     font-family: 'Gloria Hallelujah', cursive;
     width: 200px;
     height: 200px;
-    margin: 1%;
     display: inline-grid;
     color: #010002;
-    font-size: 18px;
+    font-size: 16px;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    margin: 5px;
+    transform: scale(0.8)
 }
 
 .canvas span {

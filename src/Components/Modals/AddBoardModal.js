@@ -10,7 +10,7 @@ class AddBoardModal extends React.Component {
             disabled: false,
             boardName: '',
             showBoardExistsMessage: false
-        }
+        };
     }
 
 
@@ -41,6 +41,12 @@ class AddBoardModal extends React.Component {
         this.setState({boardName: event.target.value});
     };
 
+    handleKeyPress = (event) => {
+        if(event.key === 'Enter'){
+            this.handleCreateBoard();
+        }
+    };
+
     render() {
         const {disabled, showBoardExistsMessage} = this.state;
         return (
@@ -50,7 +56,7 @@ class AddBoardModal extends React.Component {
                 </Modal.Header>
                 <Modal.Body>
                     <span>Enter name for new board: </span>
-                    <input type={"text"} value={this.state.boardName} onChange={this.handleOnChange}/>
+                    <input type={"text"} id={"modalInput"} value={this.state.boardName} onChange={this.handleOnChange} onKeyPress={this.handleKeyPress}/>
                     {showBoardExistsMessage &&
                     <div style={{color: 'red'}}>
                         Board {this.state.boardName} exists already. Please choose a different name.

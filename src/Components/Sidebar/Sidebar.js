@@ -41,7 +41,7 @@ class Sidebar extends React.Component {
                 display: 'block',
                 padding: '5px',
                 marginLeft: '32%',
-                marginBottom: Math.floor(this.props.parentHeight / 16)
+                marginBottom: Math.floor(this.props.parentHeight / 20)
             }
         }
     };
@@ -77,7 +77,7 @@ class Sidebar extends React.Component {
 
     render() {
         return (
-            <Menu width={'18%'} styles={this.getStyles()} noOverlay isOpen={true} disableCloseOnEsc>
+            <Menu disableAutoFocus  height={'100%'} width={'18%'} styles={this.getStyles()} noOverlay isOpen={true} disableCloseOnEsc>
                 {this.props.children}
                 <div id={"rect"} className={"rect"} style={{backgroundColor: this.props.color}}
                      onClick={this.handleShapeClick}>{""}</div>
@@ -86,22 +86,30 @@ class Sidebar extends React.Component {
                      onClick={this.handleShapeClick}>{""}</div>
 
                 <div id={"triangle"} style={{
-                    borderBottom: `${Math.floor(this.props.parentWidth*0.02)}px solid ${this.props.color}`,
+                    borderBottom: `${Math.floor(this.props.parentWidth * 0.02)}px solid ${this.props.color}`,
                     width: 0,
                     height: 0,
-                    borderTop: `${Math.floor(this.props.parentHeight*0.01)}px solid transparent`,
-                    borderLeft: `${Math.floor(this.props.parentWidth*0.015)}px solid transparent`,
-                    borderRight: `${Math.floor(this.props.parentWidth*0.015)}px solid transparent`,
+                    borderTop: `${Math.floor(this.props.parentHeight * 0.01)}px solid transparent`,
+                    borderLeft: `${Math.floor(this.props.parentWidth * 0.015)}px solid transparent`,
+                    borderRight: `${Math.floor(this.props.parentWidth * 0.015)}px solid transparent`,
                     padding: 0,
                     marginLeft: '32%',
                     marginTop: `${Math.floor(this.props.parentHeight / 8)}`,
                 }}
                      onClick={this.handleShapeClick}>{""}</div>
 
-                <div id={"text"} className={"text"} style={{color: this.props.color}}
+                <div id={"text"} className={"text"}
+                     style={{
+                         color: this.props.color,
+                         fontSize: this.props.parentHeight / 35,
+                         width: Math.floor(this.props.parentWidth * 0.05),
+                         marginBottom: '5%'
+                     }}
                      onClick={this.handleShapeClick}>Text
                 </div>
                 <ShapePicker
+                    parentHeight={this.props.parentHeight}
+                    parentWidth={this.props.parentWidth}
                     text={this.props.text}
                     radius={this.props.radius}
                     height={this.props.height}

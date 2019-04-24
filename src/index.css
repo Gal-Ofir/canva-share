@@ -77,4 +77,5 @@ a {
 
 .github-picker {
     box-sizing: content-box;
+    transform: scale(0.8);
 }

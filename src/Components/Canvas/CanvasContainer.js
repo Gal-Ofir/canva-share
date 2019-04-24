@@ -10,7 +10,7 @@ class CanvasContainer extends React.Component {
     };
 
     getHeight = () => {
-        return Math.floor(this.props.parentHeight * 0.90);
+        return Math.floor(this.props.parentHeight * 0.85);
     };
 
 

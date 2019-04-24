@@ -11,7 +11,8 @@ class Welcome extends React.Component {
             width: 0,
             boards: [],
             addBoardModalVisible: false
-        }
+        };
+        this.inputRef = React.createRef();
     }
 
     componentWillMount = () => {
@@ -48,8 +49,9 @@ class Welcome extends React.Component {
     };
 
     render() {
-        return <div className={'welcome-container'} style={{height: this.state.height, width: this.state.width}}>
+        return <div className={'welcome-container'}>
             <AddBoardModal
+                inputRef={this.inputRef}
                 addBoardModalVisible={this.state.addBoardModalVisible}
                 onAddBoardModalClose={this.onAddBoardModalClose}
                 existingBoards={this.state.boards}/>

@@ -1,17 +1,17 @@
 require('./server/db/connect'); //initialize db connection and load env variables
+const resetShapes = require('./reset_shapes');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const controllers = require('./server/controllers');
-const userService = require('./server/db/users');
 const port = process.env.PORT || 8080;
 const schedule = require('node-schedule');
 
 // Reset shapesCreated every 00:00
 schedule.scheduleJob('0 0 * * *', function(){
     console.log('Reset shapes created count for all users initiated.');
-    userService.resetShapesCreatedForAllUsers()
+    resetShapes()
         .then(() => {
             console.log('Shapes reset on', new Date());
         });
@@ -22,10 +22,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(bodyParser.json());
 app.use(controllers);
 app.get('/', function (req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
-
-app.get('/:boardId', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
