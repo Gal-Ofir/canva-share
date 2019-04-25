@@ -1,8 +1,6 @@
 import {slide as Menu} from 'react-burger-menu'
 import React from "react";
 import "./Sidebar.css";
-import ShapePicker from "../Shapes/ShapePicker"
-
 
 class Sidebar extends React.Component {
 
@@ -46,83 +44,49 @@ class Sidebar extends React.Component {
         }
     };
 
+    getTriangleStyle = () => {
+        return {
+            borderBottom: `${Math.floor(this.props.parentWidth * 0.02)}px solid ${this.props.color}`,
+            width: 0,
+            height: 0,
+            borderTop: `${Math.floor(this.props.parentHeight * 0.01)}px solid transparent`,
+            borderLeft: `${Math.floor(this.props.parentWidth * 0.015)}px solid transparent`,
+            borderRight: `${Math.floor(this.props.parentWidth * 0.015)}px solid transparent`,
+            padding: 0,
+            marginLeft: '32%',
+            marginTop: `${Math.floor(this.props.parentHeight / 8)}`,
+        };
+    };
+
+    getTextStyle = () => {
+        return {
+            color: this.props.color,
+                fontSize: this.props.parentHeight / 35,
+            width: Math.floor(this.props.parentWidth * 0.05),
+            marginBottom: '5%'
+        };
+    };
 
     handleShapeClick = (event) => {
         this.props.setShape(event.target.id.toUpperCase());
     };
 
-    onChangeComplete = (color) => {
-        this.props.setColor(color.hex);
-    };
-
-    onChange = (color) => {
-        this.props.setColor(color.hex);
-    };
-
-    onTextChange = (event) => {
-        this.props.onTextChange(event.target.value);
-    };
-
-    onRadiusChange = (event) => {
-        this.props.onRadiusChange(event.target.value);
-    };
-
-    onWidthChange = (event) => {
-        this.props.onWidthChange(event.target.value);
-    };
-    onHeightChange = (event) => {
-        this.props.onHeightChange(event.target.value);
-    };
-
-
     render() {
         return (
-            <Menu disableAutoFocus  height={'100%'} width={'18%'} styles={this.getStyles()} noOverlay isOpen={true} disableCloseOnEsc>
+            <Menu disableAutoFocus height={'100%'} width={'18%'} styles={this.getStyles()} noOverlay isOpen={true}
+                  disableCloseOnEsc>
                 {this.props.children}
                 <div id={"rect"} className={"rect"} style={{backgroundColor: this.props.color}}
                      onClick={this.handleShapeClick}>{""}</div>
-
                 <div id={"circle"} className={"circle"} style={{backgroundColor: this.props.color}}
                      onClick={this.handleShapeClick}>{""}</div>
-
-                <div id={"triangle"} style={{
-                    borderBottom: `${Math.floor(this.props.parentWidth * 0.02)}px solid ${this.props.color}`,
-                    width: 0,
-                    height: 0,
-                    borderTop: `${Math.floor(this.props.parentHeight * 0.01)}px solid transparent`,
-                    borderLeft: `${Math.floor(this.props.parentWidth * 0.015)}px solid transparent`,
-                    borderRight: `${Math.floor(this.props.parentWidth * 0.015)}px solid transparent`,
-                    padding: 0,
-                    marginLeft: '32%',
-                    marginTop: `${Math.floor(this.props.parentHeight / 8)}`,
-                }}
+                <div id={"triangle"} style={this.getTriangleStyle()}
                      onClick={this.handleShapeClick}>{""}</div>
-
                 <div id={"text"} className={"text"}
-                     style={{
-                         color: this.props.color,
-                         fontSize: this.props.parentHeight / 35,
-                         width: Math.floor(this.props.parentWidth * 0.05),
-                         marginBottom: '5%'
-                     }}
+                     style={this.getTextStyle()}
                      onClick={this.handleShapeClick}>Text
                 </div>
-                <ShapePicker
-                    parentHeight={this.props.parentHeight}
-                    parentWidth={this.props.parentWidth}
-                    text={this.props.text}
-                    radius={this.props.radius}
-                    height={this.props.height}
-                    width={this.props.width}
-                    color={this.props.color}
-                    onChange={this.onChange}
-                    shape={this.props.selectedShape}
-                    onChangeComplete={this.onChangeComplete}
-                    onWidthChange={this.onWidthChange}
-                    onHeightChange={this.onHeightChange}
-                    onTextChange={this.onTextChange}
-                    onRadiusChange={this.onRadiusChange}/>
-
+                {this.props.shapePicker || <div/>}
             </Menu>
         );
     }

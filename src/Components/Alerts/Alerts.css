@@ -1,0 +1,9 @@
+.header .alert {
+    color: #fff;
+    font-size: 17px;
+    left: -20px;
+    width: 80%;
+    float: right;
+    position: absolute;
+    z-index: 11;
+}

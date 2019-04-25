@@ -10,10 +10,10 @@
 }
 
 .canvas {
-    background: url("images/whiteboard.png");
+    background: url("../../images/whiteboard.png");
     background-size: cover;
     font-family: 'Gloria Hallelujah', cursive;
-    width: 200px;
+    width: 220px;
     height: 200px;
     display: inline-grid;
     color: #010002;

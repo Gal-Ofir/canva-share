@@ -1,3 +1,7 @@
+/** /db/users/users.js
+ *  Define ORM for users table, model users is used to handle CRUD operations.
+ */
+
 const Sequelize = require('sequelize');
 const sequelize = require('../connect');
 class users extends Sequelize.Model {}

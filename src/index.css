@@ -35,47 +35,8 @@ a {
     text-decoration: none;
 }
 
-.header {
-    position: absolute;
-    text-align: center;
-    display: flex;
-    width: 100%;
-    left: 20%;
-    font-family: 'Gloria Hallelujah', cursive;
-    margin-top: 10px;
-    font-size: 30px;
-}
-
-.header .alert {
-    color: #fff;
-    font-size: 17px;
-    left: -20px;
-    width: 80%;
-    float: right;
-    position: absolute;
-    z-index: 11;
-}
-
-
-.konvajs-content {
-    position:absolute;
-    border: 1px solid #a0a0a0;
-}
-
-.konvajs-content:hover {
-    cursor: pointer;
-}
-
-.button-wrap {
-    margin-right: 3%;
-    z-index:10;
-}
-
 .modal-footer {
     justify-content: left;
 }
 
-.github-picker {
-    box-sizing: content-box;
-    transform: scale(0.8);
-}
+

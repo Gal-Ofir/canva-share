@@ -1,3 +1,7 @@
+/** /test/users-test.js
+ *  Tests for users database service
+ */
+
 const userService = require('../../db/users');
 const assert = require('assert');
 
@@ -41,6 +45,7 @@ describe("users service test", function () {
                 done();
             })
             .catch(err => {
+                console.log(err);
                 done(new Error(err))
             });
     });

@@ -2,11 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="68f6114e-1647-4606-839c-88875e77d5b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Alerts/AlertConstants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Alerts/Alerts.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Canvas/Canvas.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Canvas/CanvasHeader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/shapeUtils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reset_shapes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/handlers.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/handlers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/controllers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/controllers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/connect.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/connect.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/shapes/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/shapes/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/shapes/shapes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/shapes/shapes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/users/service.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/users/service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/users/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/users/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tests/db/shapes-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tests/db/shapes-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/tests/db/users-test.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/tests/db/users-test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/utils/hash.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/utils/hash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Alerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Alerts/Alerts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/AddBoardModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/AddBoardModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Modals/DeleteModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Modals/DeleteModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Shapes/ShapePicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Shapes/ShapePicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Welcome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Welcome/Welcome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Welcome/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/http.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/http.js" afterDir="false" />
     </list>
     <list id="dcfdfd3c-203d-4ded-9558-c5b298a0b1ca" name="intellij_shit" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -95,47 +125,48 @@
     <session id="681207708">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.20" value="1" />
-          <entry key="project.open.time.25" value="1" />
+          <entry key="project.open.time.25" value="2" />
           <entry key="project.open.time.28" value="1" />
           <entry key="project.open.time.32" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="20" />
+          <entry key="css" value="27" />
           <entry key="env" value="8" />
           <entry key="gitignore" value="4" />
-          <entry key="html" value="6" />
-          <entry key="ico" value="1" />
+          <entry key="html" value="7" />
+          <entry key="ico" value="3" />
           <entry key="jpg" value="2" />
-          <entry key="js" value="156" />
-          <entry key="json" value="9" />
+          <entry key="js" value="200" />
+          <entry key="json" value="12" />
           <entry key="md" value="1" />
+          <entry key="png" value="1" />
           <entry key="shapes" value="13" />
           <entry key="sql" value="2" />
-          <entry key="svg" value="2" />
+          <entry key="svg" value="4" />
           <entry key="ts" value="4" />
-          <entry key="users" value="27" />
+          <entry key="users" value="30" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="5" />
-          <entry key="CSS" value="20" />
-          <entry key="Database Element" value="40" />
-          <entry key="HTML" value="6" />
-          <entry key="Image" value="3" />
-          <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="156" />
+          <entry key="CSS" value="27" />
+          <entry key="Database Element" value="43" />
+          <entry key="HTML" value="7" />
+          <entry key="Image" value="6" />
+          <entry key="JSON" value="12" />
+          <entry key="JavaScript" value="200" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="7" />
-          <entry key="SVG" value="2" />
+          <entry key="SVG" value="4" />
           <entry key="Scratch" value="2" />
           <entry key="TypeScript" value="4" />
           <entry key="XML" value="1" />
@@ -143,27 +174,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cell" value="21" />
-          <entry key="css" value="2664" />
+          <entry key="cell" value="25" />
+          <entry key="css" value="2670" />
           <entry key="env" value="210" />
           <entry key="gitignore" value="62" />
           <entry key="html" value="53" />
-          <entry key="js" value="35150" />
-          <entry key="json" value="150" />
+          <entry key="js" value="41969" />
+          <entry key="json" value="164" />
           <entry key="md" value="622" />
-          <entry key="txt" value="625" />
+          <entry key="txt" value="652" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="144" />
-          <entry key="CSS" value="2664" />
+          <entry key="CSS" value="2670" />
           <entry key="HTML" value="53" />
-          <entry key="JSON" value="150" />
-          <entry key="JavaScript" value="35150" />
+          <entry key="JSON" value="164" />
+          <entry key="JavaScript" value="41969" />
           <entry key="Markdown" value="622" />
-          <entry key="PLAIN_TEXT" value="753" />
-          <entry key="Scratch" value="21" />
+          <entry key="PLAIN_TEXT" value="780" />
+          <entry key="Scratch" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -176,61 +207,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/db/users/service.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="53" column="91" selection-start-line="53" selection-start-column="91" selection-end-line="53" selection-end-column="91" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://9cbeccbd-ea31-4800-9dd6-614d531cdfcc/database/canva_share/schema/public/table/users">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-              <column-attributes>
-                <column name="boards_owned" languageId="JSON" />
-              </column-attributes>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://9cbeccbd-ea31-4800-9dd6-614d531cdfcc/database/canva_share/schema/public/table/shapes">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Shapes/ShapePicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1428">
-              <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+            <state relative-caret-position="-687">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -239,10 +219,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Welcome.js">
+        <entry file="file://$PROJECT_DIR$/src/Components/Modals/DeleteModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
+            <state relative-caret-position="425">
+              <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Modals/AddBoardModal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="710">
+              <caret line="63" column="29" lean-forward="true" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -251,10 +252,61 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/index.css">
+        <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="153">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="316">
+              <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Components/Welcome/Welcome.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Canvas/CanvasHeader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -290,6 +342,16 @@
       <find>parentHeight</find>
       <find>welcome</find>
       <find>resetShapesCreatedForAllUsers</find>
+      <find>deleteAlertVisible</find>
+      <find>managerAlertVisible</find>
+      <find>maxShapesAlertVisible</find>
+      <find>MAX</find>
+      <find>RESET</find>
+      <find>height</find>
+      <find>handleBlur</find>
+      <find>navHome</find>
+      <find>onHeightChange</find>
+      <find>handleSocketData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -299,55 +361,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/manifest.json" />
-        <option value="$PROJECT_DIR$/server/db/users/users.js" />
-        <option value="$PROJECT_DIR$/server/db/shapes/index.js" />
-        <option value="$PROJECT_DIR$/src/App.css" />
-        <option value="$PROJECT_DIR$/src/Components/ColoredRect.js" />
-        <option value="$PROJECT_DIR$/src/Components/ColorPicker.js" />
-        <option value="$PROJECT_DIR$/src/Components/Sidebar.css" />
-        <option value="$PROJECT_DIR$/src/Components/Shape.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/Canvas.js" />
         <option value="$PROJECT_DIR$/src/Components/ShapePicker.js" />
-        <option value="$PROJECT_DIR$/server/db/shapes/service.js" />
-        <option value="$PROJECT_DIR$/server/tests/db/shapes-test.js" />
-        <option value="$PROJECT_DIR$/server/db/shapes/shapes.js" />
         <option value="$PROJECT_DIR$/src/Components/CanvasContainer.js" />
-        <option value="$PROJECT_DIR$/server/tests/db/users-test.js" />
         <option value="$PROJECT_DIR$/src/Components/Resizable.js" />
         <option value="$PROJECT_DIR$/src/Components/Canvas/DeleteModal.js" />
         <option value="$PROJECT_DIR$/socketio.js" />
         <option value="$PROJECT_DIR$/src/utils/md-5.js" />
         <option value="$PROJECT_DIR$/src/utils/cryptoUtils.js" />
-        <option value="$PROJECT_DIR$/server/db/connect.js" />
-        <option value="$PROJECT_DIR$/server/utils/hash.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/server/controllers/index.js" />
-        <option value="$PROJECT_DIR$/server/controllers/handlers.js" />
-        <option value="$PROJECT_DIR$/src/Components/Alerts.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/Components/Modals/DeleteModal.js" />
-        <option value="$PROJECT_DIR$/src/utils/http.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/reset-shapes.js" />
-        <option value="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" />
-        <option value="$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js" />
         <option value="$PROJECT_DIR$/src/Welcome.js" />
         <option value="$PROJECT_DIR$/src/Welcome.css" />
-        <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
         <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.css" />
-        <option value="$PROJECT_DIR$/src/index.css" />
         <option value="$PROJECT_DIR$/src/Components/Shapes/ColorPicker.js" />
-        <option value="$PROJECT_DIR$/src/Components/Shapes/ShapePicker.js" />
-        <option value="$PROJECT_DIR$/src/Components/Modals/AddBoardModal.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/server/db/users/service.js" />
         <option value="$PROJECT_DIR$/reset_shapes.js" />
+        <option value="$PROJECT_DIR$/public/manifest.json" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/Components/Alerts.js" />
+        <option value="$PROJECT_DIR$/server/tests/db/users-test.js" />
+        <option value="$PROJECT_DIR$/server/tests/db/shapes-test.js" />
+        <option value="$PROJECT_DIR$/server/db/connect.js" />
+        <option value="$PROJECT_DIR$/server/utils/hash.js" />
+        <option value="$PROJECT_DIR$/server/db/users/users.js" />
+        <option value="$PROJECT_DIR$/server/db/shapes/shapes.js" />
+        <option value="$PROJECT_DIR$/server/db/users/service.js" />
+        <option value="$PROJECT_DIR$/server/db/shapes/service.js" />
+        <option value="$PROJECT_DIR$/src/index.css" />
+        <option value="$PROJECT_DIR$/src/Components/Alerts/Alerts.css" />
+        <option value="$PROJECT_DIR$/src/Components/Canvas/Canvas.css" />
+        <option value="$PROJECT_DIR$/src/Components/Alerts/Alerts.js" />
+        <option value="$PROJECT_DIR$/src/Components/Alerts/AlertConstants.js" />
+        <option value="$PROJECT_DIR$/src/Components/Modals/DeleteModal.js" />
+        <option value="$PROJECT_DIR$/server/controllers/index.js" />
+        <option value="$PROJECT_DIR$/server/controllers/handlers.js" />
+        <option value="$PROJECT_DIR$/src/Components/Shapes/ShapePicker.js" />
+        <option value="$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js" />
+        <option value="$PROJECT_DIR$/src/Components/Canvas/CanvasHeader.js" />
+        <option value="$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js" />
+        <option value="$PROJECT_DIR$/src/utils/shapeUtils.js" />
+        <option value="$PROJECT_DIR$/src/utils/http.js" />
+        <option value="$PROJECT_DIR$/src/Components/Canvas/Canvas.js" />
+        <option value="$PROJECT_DIR$/src/Components/Welcome/Welcome.css" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/src/Components/Modals/AddBoardModal.js" />
+        <option value="$PROJECT_DIR$/src/Components/Welcome/Welcome.js" />
       </list>
     </option>
   </component>
@@ -392,41 +456,85 @@
             <path>
               <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
               <item name="canva-share" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canva-share" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
               <item name="canva-share" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
               <item name="canva-share" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
               <item name="canva-share" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
               <item name="canva-share" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Alerts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canva-share" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Canvas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canva-share" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Modals" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canva-share" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Shapes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canva-share" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Sidebar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canva-share" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Components" type="462c0819:PsiDirectoryNode" />
+              <item name="Welcome" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="canva-share" type="b2602c69:ProjectViewProjectNode" />
+              <item name="canva-share" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,7 +542,7 @@
     <property name="TODO_SCOPE" value="All Places" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556152621814" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556190900171" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.1" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -447,18 +555,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Gal Ofir\Projects\canva-share\public" />
       <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\Components\Modals" />
       <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\images" />
-      <recent name="C:\Users\Gal Ofir\Projects\canva-share\public" />
       <recent name="C:\Users\Gal Ofir\Projects\canva-share\server\db\users" />
       <recent name="C:\Users\Gal Ofir\Projects\canva-share\server\tests\db" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\Components\Alerts" />
+      <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\Components\Welcome" />
+      <recent name="C:\Users\Gal Ofir\Projects\canva-share\public" />
       <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\images" />
       <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\Components\Modals" />
-      <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\Components\Sidebar" />
-      <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\Components\Shapes" />
-      <recent name="C:\Users\Gal Ofir\Projects\canva-share\src\Components\Canvas" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -473,10 +581,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.server.js">
-    <configuration name="reset_shapes.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="reset_shapes.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Mocha.server\tests\db\users-test.js">
     <configuration name="server.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="server.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -500,6 +605,17 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="server\tests\db\shapes-test.js" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST_FILE</test-kind>
+      <test-file>$PROJECT_DIR$/server/tests/db/shapes-test.js</test-file>
+      <method v="2" />
+    </configuration>
     <configuration name="server\tests\db\users-test.js" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -514,17 +630,17 @@
     <list>
       <item itemvalue="npm.react-start" />
       <item itemvalue="npm.start" />
-      <item itemvalue="Node.js.reset_shapes.js" />
-      <item itemvalue="Mocha.server\tests\db\users-test.js" />
       <item itemvalue="Node.js.server.js" />
+      <item itemvalue="Mocha.server\tests\db\shapes-test.js" />
+      <item itemvalue="Mocha.server\tests\db\users-test.js" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.server.js" />
-        <item itemvalue="Node.js.reset_shapes.js" />
         <item itemvalue="Mocha.server\tests\db\users-test.js" />
+        <item itemvalue="Mocha.server\tests\db\shapes-test.js" />
         <item itemvalue="npm.react-start" />
         <item itemvalue="npm.start" />
+        <item itemvalue="Node.js.server.js" />
       </list>
     </recent_temporary>
   </component>
@@ -544,7 +660,8 @@
       <workItem from="1555933983553" duration="41885000" />
       <workItem from="1556123818324" duration="9762000" />
       <workItem from="1556133938536" duration="1269000" />
-      <workItem from="1556151787893" duration="858000" />
+      <workItem from="1556151787893" duration="1666000" />
+      <workItem from="1556179504667" duration="11261000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1555690346785</created>
@@ -700,43 +817,50 @@
       <option name="project" value="LOCAL" />
       <updated>1556134010371</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Test scheduleJob on heroku">
+      <created>1556152681479</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1556152681479</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="server_tests_db_users-test_js - 2019.04.21 at 01h 19m 43s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="server_tests_db_users-test_js - 2019.04.21 at 01h 19m 54s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="server_tests_db_users-test_js - 2019.04.21 at 01h 20m 04s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="server_tests_db_users-test_js - 2019.04.21 at 01h 20m 31s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="server_tests_db_users-test_js - 2019.04.21 at 01h 20m 38s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="server_tests_db_users-test_js - 2019.04.21 at 01h 20m 51s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="server_tests_db_users-test_js - 2019.04.21 at 01h 22m 59s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="server_tests_db_users-test_js - 2019.04.24 at 22h 36m 11s.xml">
-      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="server_tests_db_users-test_js - 2019.04.24 at 22h 40m 25s.xml">
       <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
     <history-entry file="server_tests_db_users-test_js - 2019.04.24 at 22h 42m 46s.xml">
       <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="server_tests_db_shapes-test_js - 2019.04.25 at 11h 35m 19s.xml">
+      <configuration name="server\tests\db\shapes-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="server_tests_db_users-test_js - 2019.04.25 at 11h 35m 27s.xml">
+      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="server_tests_db_users-test_js - 2019.04.25 at 11h 37m 54s.xml">
+      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="server_tests_db_users-test_js - 2019.04.25 at 11h 38m 09s.xml">
+      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="server_tests_db_users-test_js - 2019.04.25 at 11h 38m 59s.xml">
+      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="server_tests_db_users-test_js - 2019.04.25 at 11h 43m 18s.xml">
+      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="server_tests_db_users-test_js - 2019.04.25 at 11h 43m 42s.xml">
+      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="server_tests_db_users-test_js - 2019.04.25 at 11h 44m 05s.xml">
+      <configuration name="server\tests\db\users-test.js" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118765000" />
+    <option name="totallyTimeSpent" value="130834000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -756,7 +880,7 @@
       <window_info id="UI Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.18176973" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.18336888" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.2527115" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.329718" />
@@ -774,7 +898,7 @@
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.23240939" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.23240939" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="6" type="SLIDING" weight="0.4" />
@@ -804,137 +928,14 @@
     <MESSAGE value="Fix small manager bug" />
     <MESSAGE value="Better styling" />
     <MESSAGE value="Update readme.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update readme.md" />
+    <MESSAGE value="Test scheduleJob on heroku" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test scheduleJob on heroku" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/App.css" />
-    <entry file="file://$PROJECT_DIR$/node_modules/mocha/mocha.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="13307" column="35554" selection-start-line="13307" selection-start-column="35554" selection-end-line="13307" selection-end-column="35554" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/ColoredRect.js" />
-    <entry file="file://$PROJECT_DIR$/server/tests/db/shapes-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="37" column="55" selection-start-line="37" selection-start-column="55" selection-end-line="37" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.test.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Shapes/Shape.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="47" column="15" selection-start-line="47" selection-start-column="15" selection-end-line="47" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Resizable.js" />
-    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/es/index.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-bootstrap/es/Button.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/users/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/shapes/service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socketio.js" />
-    <entry file="file://$PROJECT_DIR$/build/static/js/main.4fefb11b.chunk.js" />
-    <entry file="file://$PROJECT_DIR$/src/utils/cryptoUtils.js" />
-    <entry file="file://$PROJECT_DIR$/server/db/shapes/shapes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-417">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/utils/hash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/users/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/controllers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Alerts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="44" lean-forward="true" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-color/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="189" selection-start-line="5" selection-start-column="189" selection-end-line="5" selection-end-column="189" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Modals/DeleteModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a4b395c3-3b19-4baf-bf49-1e5c039e4799/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/images/whiteboard.jpg" />
-    <entry file="file://$PROJECT_DIR$/server/controllers/handlers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="67" column="22" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -945,20 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/http.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="44" column="13" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/connect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -966,53 +953,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="69" selection-start-line="27" selection-start-column="69" selection-end-line="27" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Welcome.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="21" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Shapes/ColorPicker.js" />
-    <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5440">
-          <caret line="335" selection-start-line="335" selection-end-line="335" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Modals/AddBoardModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="51" column="6" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -1026,44 +971,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/tests/db/users-test.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Shapes/ShapePicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1428">
-          <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="53" column="24" selection-start-line="53" selection-start-column="24" selection-end-line="53" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/sequelize/types/lib/sequelize.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="978" column="9" selection-start-line="978" selection-start-column="9" selection-end-line="978" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reset_shapes.js" />
+    <entry file="file://$PROJECT_DIR$/public/old.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/paint-brush.svg" />
+    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1074,27 +1007,107 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/db/users/service.js">
+    <entry file="file://$PROJECT_DIR$/server/db/connect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="53" column="91" selection-start-line="53" selection-start-column="91" selection-end-line="53" selection-end-column="91" />
+        <state relative-caret-position="316">
+          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/server/utils/hash.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" column="11" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reset_shapes.js">
+    <entry file="file://$PROJECT_DIR$/server/db/users/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" selection-start-column="32" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/db/shapes-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-194">
+          <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/tests/db/users-test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/db/users/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/db/shapes/shapes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="14" selection-start-column="14" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/db/shapes/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
-          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/logo.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/images/whiteboard.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Alerts/Alerts.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Alerts/Alerts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Alerts/AlertConstants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/db/users/service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1108,10 +1121,145 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server/controllers/handlers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1336">
+          <caret line="153" column="30" lean-forward="true" selection-start-line="153" selection-start-column="30" selection-end-line="153" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/shapeUtils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/http.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Shapes/Shape.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Welcome/Welcome.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Sidebar/Sidebar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1037">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Shapes/ShapePicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-687">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Modals/DeleteModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="38" lean-forward="true" selection-start-line="25" selection-start-column="38" selection-end-line="25" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Canvas/CanvasHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Canvas/CanvasContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="37" lean-forward="true" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        <state relative-caret-position="316">
+          <caret line="51" column="7" lean-forward="true" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Modals/AddBoardModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="710">
+          <caret line="63" column="29" lean-forward="true" selection-start-line="63" selection-start-column="29" selection-end-line="63" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Canvas/Canvas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Welcome/Welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="21" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -11,7 +11,6 @@ class DeleteModal extends React.Component {
         }
     }
 
-
     handleClose = () => {
         this.props.onDeleteModalClose();
     };
@@ -32,10 +31,11 @@ class DeleteModal extends React.Component {
                 </Modal.Header>
                 <Modal.Body>
                     <div>This action is permanent, and cannot be undone.
-                    </div><div>
-                    Are you sure you wish to delete all shapes from
-                    this board?
-                </div>
+                    </div>
+                    <div>
+                        Are you sure you wish to delete all shapes from
+                        this board?
+                    </div>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={this.handleClose}>
@@ -46,8 +46,8 @@ class DeleteModal extends React.Component {
                     </Button>
                 </Modal.Footer>
             </Modal>
-    );
+        );
     }
-    }
+}
 
-    export default DeleteModal;
+export default DeleteModal;

@@ -98,3 +98,27 @@ export const getMaxShapes = () => {
         url: '/config/max'
     })
 };
+
+export const getUserShapeLimits = () => {
+    const idFromLocalStorage = window.localStorage.getItem(ID_KEY);
+    return axios({
+        method: 'GET',
+        url: `/user/${idFromLocalStorage}/limit?force=true`
+    })
+};
+
+export const handleSocketData = (boardId, onAddShape, onManagerDeletedShapes, onResetShapeCount) => {
+    socket.on(boardId, (data) => {
+        if (!messageFromMe(data.ip)) {
+            onAddShape(data);
+        }
+    });
+    socket.on(`delete:${boardId}`, (ip) => {
+        if (!messageFromMe(ip)) {
+            onManagerDeletedShapes();
+        }
+    });
+    socket.on('reset_shapes', () => {
+        onResetShapeCount();
+    })
+};

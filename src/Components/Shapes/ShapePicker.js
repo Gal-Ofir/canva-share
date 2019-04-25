@@ -79,9 +79,8 @@ class ShapePicker extends React.Component {
         const shapeModifier = this.resolveShapeModifier();
         return (
             <div style={{fontSize: this.props.parentHeight / 35}}>
-                <div style={{marginBottom: '8px', color: this.props.color, cursor: 'pointer'}}
-                     onClick={this.handleClick}
-                     onBlur={this.handleBlur}>Choose a color...
+                <div style={{marginBottom: '8px', color: this.props.color, cursor: 'pointer'}} onClick={this.handleClick}>
+                     Choose a color...
                 </div>
                 {this.state.colorPickerOpen &&
                 <GithubPicker
@@ -90,7 +89,7 @@ class ShapePicker extends React.Component {
                     onChange={this.props.onChange}
                 />
                 }
-                <div style={{color: "#ffffff", marginTop: '8px'}}>
+                <div style={{color: this.props.color, marginTop: '8px'}}>
                     Current shape: {shapeTypes[this.props.shape]}
                     {shapeModifier}
                 </div>

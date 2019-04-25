@@ -1,7 +1,7 @@
 import React from "react";
 import Canvas from "./Components/Canvas/Canvas";
 import {getUser, initSocket} from "./utils/http";
-import Welcome from "./Welcome";
+import Welcome from "./Components/Welcome/Welcome";
 
 class App extends React.Component {
 

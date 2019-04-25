@@ -4,7 +4,6 @@ import Shape from "../Shapes/Shape"
 
 class CanvasContainer extends React.Component {
 
-
     getWidth = () => {
         return Math.floor(this.props.parentWidth * 0.77);
     };

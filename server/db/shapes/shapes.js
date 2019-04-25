@@ -1,3 +1,7 @@
+/** /db/shapes/shapes.js
+ *  Define ORM for shapes table, model shapes is used to handle CRUD operations.
+ */
+
 const Sequelize = require('sequelize');
 const sequelize = require('../connect');
 class shapes extends Sequelize.Model {}

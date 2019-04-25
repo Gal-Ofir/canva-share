@@ -1,3 +1,7 @@
+/** /test/shapes-test.js
+ *  Tests for shapes database service
+ */
+
 const shapeService = require('../../db/shapes');
 const assert = require('assert');
 

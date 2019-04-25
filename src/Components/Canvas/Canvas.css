@@ -1,0 +1,29 @@
+.header {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    width: 100%;
+    left: 20%;
+    font-family: 'Gloria Hallelujah', cursive;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.konvajs-content {
+    position:absolute;
+    border: 1px solid #a0a0a0;
+}
+
+.konvajs-content:hover {
+    cursor: pointer;
+}
+
+.button-wrap {
+    margin-right: 3%;
+    z-index:10;
+}
+
+.github-picker {
+    box-sizing: content-box;
+    transform: scale(0.8);
+}

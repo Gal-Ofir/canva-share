@@ -1,37 +1,18 @@
 import React from "react";
 import "./Welcome.css";
-import {getAllBoards} from "./utils/http";
-import AddBoardModal from "./Components/Modals/AddBoardModal";
+import {getAllBoards} from "../../utils/http";
+import AddBoardModal from "../Modals/AddBoardModal";
 
 class Welcome extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            height: 0,
-            width: 0,
             boards: [],
             addBoardModalVisible: false
         };
-        this.inputRef = React.createRef();
     }
 
-    componentWillMount = () => {
-        this.updateDimensions();
-    };
-
-    componentWillUnmount = () => {
-        window.removeEventListener("resize", this.updateDimensions);
-    };
-
-    updateDimensions = () => {
-        this.setState({
-            height: window.innerHeight,
-            width: window.innerWidth
-        });
-    };
-
     componentDidMount = () => {
-        window.addEventListener("resize", this.updateDimensions);
         getAllBoards()
             .then(boards => {
                 this.setState({boards: boards.data})
@@ -51,7 +32,6 @@ class Welcome extends React.Component {
     render() {
         return <div className={'welcome-container'}>
             <AddBoardModal
-                inputRef={this.inputRef}
                 addBoardModalVisible={this.state.addBoardModalVisible}
                 onAddBoardModalClose={this.onAddBoardModalClose}
                 existingBoards={this.state.boards}/>
