@@ -1,5 +1,5 @@
 require('./server/db/connect'); //initialize db connection and load env variables
-const resetShapes = require('./reset_shapes');
+const userService = require('./server/db/users');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -8,10 +8,10 @@ const controllers = require('./server/controllers');
 const port = process.env.PORT || 8080;
 const schedule = require('node-schedule');
 
-// Reset shapesCreated every 00:00
-schedule.scheduleJob('0 0 * * *', function(){
+// Reset shapesCreated every 00:00, Server time
+schedule.scheduleJob('45 3 * * *',function(){
     console.log('Reset shapes created count for all users initiated.');
-    resetShapes()
+    userService.resetShapesCreatedForAllUsers()
         .then(() => {
             console.log('Shapes reset on', new Date());
         });
