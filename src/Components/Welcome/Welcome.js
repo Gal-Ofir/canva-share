@@ -30,7 +30,7 @@ class Welcome extends React.Component {
     };
 
     render() {
-        return <div className={'welcome-container'}>
+        return <>
             <AddBoardModal
                 addBoardModalVisible={this.state.addBoardModalVisible}
                 onAddBoardModalClose={this.onAddBoardModalClose}
@@ -49,7 +49,7 @@ class Welcome extends React.Component {
                         </div>
                 </a>);
             })}
-        </div>;
+        </>;
     }
 }
 

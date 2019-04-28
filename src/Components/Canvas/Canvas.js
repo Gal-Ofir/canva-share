@@ -1,28 +1,28 @@
 import React from "react";
 import CanvasContainer from "./CanvasContainer";
-import Sidebar from '../Sidebar/Sidebar';
 import {
-    handleSocketData,
     addShape,
     deleteAllShapesByBoardId,
     getIsManagerForBoard,
     getShapesByBoardId,
     getUserShapeLimits,
+    handleSocketData,
 } from "../../utils/http";
 import {getShapeData} from "../../utils/shapeUtils";
 import DeleteModal from "../Modals/DeleteModal";
 import {alertType} from "../Alerts/AlertConstants";
 import "./Canvas.css";
 import CanvasHeader from "./CanvasHeader";
-import ShapePicker from "../Shapes/ShapePicker";
+import {Alerts} from "../Alerts/Alerts";
+import DropdownShapePicker from "../DropdownPicker/DropdownShapePicker";
+import OverlayColorPicker from "../OverlayColorPicker/OverlayColorPicker";
+import ShapeSettingsOverlay from "../Shapes/ShapeSettingsOverlay";
 
 class Canvas extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            elementWidth: 0,
-            elementHeight: 0,
             color: '#fff',
             selectedShape: 'RECT',
             height: 50,
@@ -42,40 +42,10 @@ class Canvas extends React.Component {
         }
     }
 
-    getShapesCreatedStyle = () => {
-        return {
-            color: this.state.color,
-            fontSize: this.state.elementHeight / 35,
-            width: '100%',
-            display: 'block',
-            cursor: 'default',
-            marginLeft: '8%',
-            padding: '0',
-            marginBottom: '10%',
-            marginTop: '-30px'
-        }
-    };
-
     componentDidMount = () => {
-        window.addEventListener("resize", this.updateDimensions);
         this.checkIfManager();
         this.loadShapesFromDb();
         this.getShapeLimits();
-    };
-
-    updateDimensions = () => {
-        this.setState({
-            elementHeight: document.body.clientHeight,
-            elementWidth: document.body.clientWidth
-        });
-    };
-
-    componentWillMount = () => {
-        this.updateDimensions();
-    };
-
-    componentWillUnmount = () => {
-        window.removeEventListener("resize", this.updateDimensions);
     };
 
     handleAddShape = (data) => {
@@ -177,6 +147,11 @@ class Canvas extends React.Component {
         this.setState({deleteModalVisible: false});
     };
 
+    onShapeChange = (event) => {
+        console.log(event.target);
+        this.setState({selectedShape: event.target.id.toUpperCase()});
+    };
+
     handleDelete = (callback) => {
         deleteAllShapesByBoardId(this.props.boardId)
             .then(() => {
@@ -255,57 +230,50 @@ class Canvas extends React.Component {
     };
 
     render() {
-        const sideBarChildren =
-            <div style={this.getShapesCreatedStyle()}>
-                Shapes created today: {this.state.shapesCreated} out of {this.state.maxShapes}
-            </div>;
-        const shapePicker =
-            <ShapePicker
-                parentHeight={this.state.elementHeight}
-                parentWidth={this.state.elementWidth}
-                text={this.state.text}
-                radius={this.state.radius}
-                height={this.state.height}
-                width={this.state.width}
-                color={this.state.color}
-                shape={this.state.selectedShape}
-                onChange={this.setColor}
-                onChangeComplete={this.setColor}
-                onWidthChange={this.onWidthChange}
-                onHeightChange={this.onHeightChange}
-                onTextChange={this.onTextChange}
-                onRadiusChange={this.onRadiusChange}/>;
         return (
-            <div id="outer-container">
+            <>
+                <Alerts
+                    alertType={this.state.alertType}
+                    onClose={this.dismissAlert}
+                />
                 <DeleteModal
                     onDeleteModalClose={this.onDeleteModalClose}
                     handleDelete={this.handleDelete}
                     deleteModalVisible={this.state.deleteModalVisible}/>
                 <CanvasHeader
-                    parentWidth={this.state.elementWidth}
                     alertType={this.state.alertType}
                     isManager={this.state.isManager}
                     disabled={this.state.existingShapes.length === 0}
                     boardId={this.props.boardId}
                     dismissAlert={this.dismissAlert}
                     onClickDelete={this.onClickDelete}
-                />
-                <Sidebar pageWrapId={"page-wrap"} outerContainerId={"outer-container"}
-                         children={sideBarChildren}
-                         parentWidth={this.state.elementWidth}
-                         parentHeight={this.state.elementHeight}
-                         color={this.state.color}
-                         selectedShape={this.state.selectedShape}
-                         setShape={this.setShape}
-                         shapePicker={shapePicker}
-                />
+                    shapePicker={<>
+                        <OverlayColorPicker
+                            color={this.state.color}
+                            onChange={this.setColor}
+                            onChangeComplete={this.setColor}/>
+                        <DropdownShapePicker
+                            color={this.state.color}
+                            handleOnClick={this.onShapeChange}
+                            selectedShape={this.state.selectedShape}/>
+                        <ShapeSettingsOverlay
+                            text={this.state.text}
+                            radius={this.state.radius}
+                            height={this.state.height}
+                            width={this.state.width}
+                            onWidthChange={this.onWidthChange}
+                            onHeightChange={this.onHeightChange}
+                            onTextChange={this.onTextChange}
+                            onRadiusChange={this.onRadiusChange}
+                            selectedShape={this.state.selectedShape}/>
+                    </>}
+                    shapesCreated={this.state.shapesCreated}
+                    maxShapes={this.state.maxShapes}/>
                 <CanvasContainer
                     onCanvasClick={this.onCanvasClick}
-                    parentWidth={this.state.elementWidth}
-                    parentHeight={this.state.elementHeight}
                     existingShapes={this.state.existingShapes}
                 />
-            </div>
+            </>
         );
     }
 }

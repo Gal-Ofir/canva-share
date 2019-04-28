@@ -1,28 +1,18 @@
 .welcome-container, .bm-menu {
-    /*padding: 2%;*/
-    /*background: url("images/landing-page.png");*/
-    /*text-align: center;*/
-    background: #83a4d4;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    height: -webkit-fill-available;
-    text-align: center;
 }
 
 .canvas {
     background: url("../../images/whiteboard.png");
     background-size: cover;
-    font-family: 'Gloria Hallelujah', cursive;
     width: 220px;
     height: 200px;
     display: inline-grid;
-    color: #010002;
-    font-size: 16px;
+    color: #0612ff;
+    font-size: 1em;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
     margin: 5px;
-    transform: scale(0.8)
 }
 
 .canvas span {
@@ -36,10 +26,8 @@
 
 .welcome-message {
     color: #ffffff;
-    font-size: 40px;
-    font-family: 'Dokdo', cursive;
+    font-size: 2em;
 }
 
 .welcome-submessage {
-    font-family: 'Schoolbell', cursive;
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Canvas from "./Components/Canvas/Canvas";
 import {getUser, initSocket} from "./utils/http";
 import Welcome from "./Components/Welcome/Welcome";
+import Container from "react-bootstrap/Container";
 
 class App extends React.Component {
 
@@ -22,14 +23,14 @@ class App extends React.Component {
 
     render() {
         return (
-            <div>
+            <Container className={"canvas-wrap"}>
                 {this.path === '/' ?
                     <Welcome/> :
                     <Canvas
                         boardId={decodeURI(this.state.title)}
                     />
                 }
-            </div>
+            </Container>
         );
     }
 }

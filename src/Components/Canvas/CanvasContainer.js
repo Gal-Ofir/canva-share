@@ -1,46 +1,68 @@
 import React from "react";
-import {Stage, Layer} from "react-konva";
+import {Layer, Stage} from "react-konva";
 import Shape from "../Shapes/Shape"
+import {Row} from "react-bootstrap";
 
 class CanvasContainer extends React.Component {
 
-    getWidth = () => {
-        return Math.floor(this.props.parentWidth * 0.77);
+    constructor(props) {
+        super(props);
+        this.state = {
+            height:0,
+            width:0
+        }
+    }
+
+
+    updateDimensions = () => {
+        this.setState({
+            height: this.parentElement.attrs.container.clientHeight,
+            width: this.parentElement.attrs.container.clientWidth
+        });
     };
 
-    getHeight = () => {
-        return Math.floor(this.props.parentHeight * 0.85);
+    componentWillMount = () => {
+        if (this.parentElement && this.parentElement.attrs)
+        this.updateDimensions();
+    };
+
+    componentWillUnmount = () => {
+        window.removeEventListener("resize", this.updateDimensions);
     };
 
 
-    handleOnClick = (event) => {
-        this.props.onCanvasClick(event);
+    componentDidMount = () => {
+        window.addEventListener("resize", this.updateDimensions);
+        this.updateDimensions();
     };
+
+
 
     render() {
         return (
-            <Stage style={{
-                position: 'relative', paddingTop: '57px',
-                marginLeft: '19%'
-            }}
-                   onClick={this.handleOnClick}
-                   width={this.getWidth()} height={this.getHeight()}>
-                <Layer>
-                    {this.props.existingShapes.map((shapeProps, i) => {
-                        const {color, height, shape, text, width, x, y, radius} = shapeProps;
-                        return <Shape
-                            color={color}
-                            height={height}
-                            shape={shape}
-                            text={text}
-                            width={width}
-                            x={x}
-                            y={y}
-                            radius={radius}
-                            key={i}/>
-                    })}
-                </Layer>
-            </Stage>
+            <Row className={'canvas-row'}>
+                <Stage className={'canvas-container'}
+                       ref={ (parentElement) => this.parentElement = parentElement}
+                       onClick={this.props.onCanvasClick}
+                       height={this.state.height}
+                       width={this.state.width}>
+                    <Layer>
+                        {this.props.existingShapes.map((shapeProps, i) => {
+                            const {color, height, shape, text, width, x, y, radius} = shapeProps;
+                            return <Shape
+                                color={color}
+                                height={height}
+                                shape={shape}
+                                text={text}
+                                width={width}
+                                x={x}
+                                y={y}
+                                radius={radius}
+                                key={i}/>
+                        })}
+                    </Layer>
+                </Stage>
+            </Row>
         );
     }
 }

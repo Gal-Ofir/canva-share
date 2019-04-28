@@ -1,0 +1,10 @@
+.tooltip-inner {
+    max-width: none;
+    background-color: #ffffff;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before, .bs-tooltip-bottom .arrow::before {
+    bottom: 0;
+    border-width: 0 .4rem .4rem;
+    border-bottom-color: #fff;
+}
