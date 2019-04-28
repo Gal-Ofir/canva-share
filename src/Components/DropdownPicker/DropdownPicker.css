@@ -1,0 +1,18 @@
+
+button .fas.fa-caret-up {
+    transform: scale(2);
+}
+
+.dropdown-menu {
+    min-width: 4em;
+}
+
+.dropdown-toggle::after {
+     border: none !important;
+}
+
+.dropdown {
+    margin: 5px;
+    width: 0;
+    display: inline;
+}

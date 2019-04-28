@@ -2,33 +2,30 @@
 @import url('https://fonts.googleapis.com/css?family=Dokdo|Gloria+Hallelujah');
 @import url('https://fonts.googleapis.com/css?family=Schoolbell');
 
-/* Tablet Landscape */
-@media screen and (max-width: 1060px) {
-    #primary { width:67%; }
-    #secondary { width:30%; margin-left:3%;}
-}
-/* Tabled Portrait */
-@media screen and (max-width: 768px) {
-    .konvajs-content { width:100%; }
-    .bm-menu { width:100%; margin:0; border:none; }
-}
-
 html {
     height: 100%
 }
 
+root {
+    height: 100%;
+}
 
-img { max-width: 100%; }
+img {
+    max-width: 100%;
+}
 
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: 'Gloria Hallelujah', cursive;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #83a4d4; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: -webkit-fill-available;
+    text-align: center;
 }
 
 a {
@@ -39,4 +36,10 @@ a {
     justify-content: left;
 }
 
+.canvas-wrap {
+
+    padding-bottom: 60px;
+    height: -webkit-fill-available;
+
+}
 

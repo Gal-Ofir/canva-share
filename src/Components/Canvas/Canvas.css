@@ -1,29 +1,35 @@
 .header {
-    position: absolute;
     text-align: center;
-    display: flex;
-    width: 100%;
-    left: 20%;
+    color: #ffffff;
     font-family: 'Gloria Hallelujah', cursive;
-    margin-top: 10px;
-    font-size: 30px;
+    font-size: 1.5em;
 }
 
 .konvajs-content {
-    position:absolute;
-    border: 1px solid #a0a0a0;
-}
-
-.konvajs-content:hover {
-    cursor: pointer;
+    height: inherit !important;
+    width: 100% !important;
 }
 
 .button-wrap {
-    margin-right: 3%;
-    z-index:10;
+    margin-top: 50px;
 }
 
 .github-picker {
     box-sizing: content-box;
     transform: scale(0.8);
+}
+
+.canvas-container {
+    border: 1px solid #a0a0a0;
+    border-radius: 30px;
+    cursor: pointer;
+    width: 100% !important;
+    height: inherit;
+    padding-bottom: 20px;
+    background-color: #ffffff;
+}
+
+.canvas-row {
+    height: inherit;
+    padding-bottom: 25px;
 }

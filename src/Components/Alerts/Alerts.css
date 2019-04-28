@@ -1,9 +1,10 @@
-.header .alert {
+
+
+.alert-header {
     color: #fff;
-    font-size: 17px;
-    left: -20px;
-    width: 80%;
-    float: right;
+    left: 1px;
+    padding-right: 0;
+    padding-left: 0;
     position: absolute;
     z-index: 11;
 }

@@ -12,7 +12,7 @@ class Alerts extends React.Component {
         if (show) {
             const {variant, heading, text} = ALERT_CONTENT[this.props.alertType];
             alert =
-                <Alert onClose={this.props.onClose} show dismissible variant={variant}>
+                <Alert className={'alert-header'} style={{width: document.body.clientWidth}} onClose={this.props.onClose} show dismissible variant={variant}>
                 <Alert.Heading>{heading}</Alert.Heading>
                     <p>{text}</p>
                 </Alert>;
